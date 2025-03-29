@@ -3,26 +3,29 @@
     margin: 0;
     box-sizing: border-box;
 }
-.dosis {
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-body{
-    font-family: "Dosis", sans-serif;
-    background-image: url("/assets/images/playa2.png");
-    background-repeat: no-repeat;
-    background-size: cover;    
-
-    background-blend-mode: overlay;
+nav ul li, div header {
+    font-family: "Sansita Swashed", system-ui;
+    background: linear-gradient(180deg, #FFF 0.5%, #D9AB15 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+body{
+    background-color: #3477b6ab;
+    background-image: url('/project_caribe_dreams/assets/images/playa2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-family: 'Dosis', 'sans-serif','Sansita Swashed', cursive;
+
+}
+
 .background-container
 {
-   
+    background-color: #3477b6ab;
     background-attachment: fixed;
     position: absolute;
-    
     z-index: -1;
 }
 
@@ -63,7 +66,7 @@ body{
 }
 
 .logo span{
-    color: #fff;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 30px;
 }
