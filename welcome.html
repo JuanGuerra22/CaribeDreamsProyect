@@ -5,36 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Caribe Dreams</title>
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <script src="./javascript/javascript.js" defer></script>
 </head>
 
 <body>
     <main>
         <section class="welcome-section">
-            <nav>
-                <div class="card-container">
-                    <div class="welcome-container">
-                        <h1>Bienvenidos a Caribe Dreams</h1>
-                        <img src="assets/images/logo.png" class="logo">
-                        <button class="btn-primary">Iniciar Sesión</button>
-                        <p>¿No estás Registrado? <a href="#" class="registro.html">Regístrate</a></p>
-                        <a href="Index.html"><button class="btn-secondary">Ingresar como Invitado</button></a>
-                    </div>
-                    
-                    <div class="welcome-container">
+                <div class="card-background">
+                    <div>
                         <h1>Welcome to Caribe Dreams</h1>
                         <img src="assets/images/logo.png" class="logo">
-                        <a href="LogIn.html"><button class="btn-primary">Log in</button></a>
-                        <p>Are you not registered yet? <a href="register.html">Sign up here</a></p>
-                        <a href="Index.html"><button class="btn-secondary">Join as guess</button></a>
+                        <button class="btn-primary" id="redirectToLogIn">Log in</button>
+                        <p>Not registered yet? <a href="register.html" class="registro.html">Create account</a></p>
+                        <a href="Index.html"><button class="btn-secondary">Continue as guest</button></a>
                     </div>
-                </div>
-            </nav>
         </section>
     </main>
+    
 </body>
 
 </html>

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project_caribe_dreams/css/css.css">
+    <script src="./javascript/javascript.js" defer></script>
 </head>
 <body>
     <div class="background-container">
@@ -17,56 +18,48 @@
             <div class="navbar-container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="/project_caribe_dreams/assets/images/logo.png" alt="Caribe Dreams">
-                        <span>Caribe Dreams<span>
+                        <img src="assets/images/logo.png" alt="Caribe Dreams">
+                        <span>Caribe Dreams</span>
                     </a>
                 </div>
             </div>
-
             <nav class="nav-menu">
                 <ul class="nav-list">
-
                     <li>
-                        <div class="hidden"><span class="material-symbols-outlined">home_app_logo</span></div><a href="index.html">Home</a>
+                        <a href="index.html"  id="styled">Home</a>
                     </li>
                     <li>
-                        <div class="hidden"><span class="material-symbols-outlined">data_loss_prevention</span></div><a href="index.html">About</a>
-                    </li>
-
-                    <li>
-                        <div class="hidden"><span class="material-symbols-outlined">api</span></div><a href="index.html">Services</a>
-                    </li>
-                    </li>
-                    <a href="#" class="nav-link"></a>
-
-                    <ul class="dropdown-menu hidden">
-                        <li>
-                            <div class="hidden"><span class="material-symbols-outlined">webhook</span></div><a href="index.html">Entities</a>
-                        </li>
-                        <li>
-                            <div class="hidden"><span class="material-symbols-outlined">enterprise</span></div><a href="index.html">Enterprises</a>
-                        </li>
-                    </ul>
-
-                    <li>
-                        <div class="hidden"><span class="material-symbols-outlined">distance</span></div><a href="index.html">Destination </a>
-                    </li>
-
-                    <ul class="dropdown-menu hidden">
-                        <li><a href="bolivar.html">Bolívar</a></li>
-                        <li><a href="cordoba.html">Córdoba</a></li>
-                        <li><a href="sucre.html">Sucre</a></li>
-                        <li><a href="sanandres.html">San Andrés y Providencia</a></li>
-                    </ul>
-
-                    <li>
-                        <div class="hidden"><span class="material-symbols-outlined hidden">contact_mail</span></div><a href="index.html">Contact</a>
+                        <a href="about us.html"  id="styled">About</a>
                     </li>
                     <li>
-                        <div class="hidden"><span class="material-symbols-outlined hidden">person</span></div><a href="welcome.html">Login</a>
+                        <a href="index.html"  id="styled">
+                            Services
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Bolívar</a></li>
+                            <li><a href="#">Córdoba</a></li>
+                            <li><a href="#">Sucre</a></li>
+                            <li><a href="#">San Andrés y Providencia</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="#"  id="styled">
+                           Contact
+                        </a>
                     </li>
                     <li>
-                        <div class="hidden"><span class="material-symbols-outlined hidden">logout</span><a href="Index.html" class="hidden">Log out</a></div>
+                        <a class="redirectToLogIn" href="#">
+                           Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToLogOut"  >
+                           Log out
+                        </a>
                     </li>
                 </ul>
             </nav>
