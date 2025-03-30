@@ -7,11 +7,14 @@
 a{
     text-decoration: none;
 }
+h3{
+    color: white;
+}
 
 
 nav ul, div header {
     font-family: "Sansita Swashed", system-ui;
-    background: linear-gradient(180deg, #FFF 0.5%, #D9AB15 100%);
+    background: linear-gradient(180deg, #FFF 0.5%, #d9ab15 100%);
     background-clip: text;
 
 }
@@ -29,14 +32,17 @@ label{
     display:flex;
     align-content:center;
 }
-.logo{
-    width: 106px;
+.logo {
     height: 105px;
     flex-shrink: 0;
+    margin-right: auto; /* Pushes the logo to the left */
+    display: flex;
+    align-items: center;
 }
 .navbar {
     position: fixed;
     display: flex;
+    justify-content: space-between;
     align-items: center;    
     top: 0;
     left: 0;
@@ -52,7 +58,6 @@ label{
     align-items: center;
     padding: 0px 20px;
     max-width: 1200px;
-    margin: 0 auto;
     height: 70px;
 }
 
@@ -98,7 +103,7 @@ z-index: 10;
 }
 
 .dropdown-menu li a:hover {
-    background-color: rgba(0, 0, 255, 0.3); /* Transparent blue */
+    background-color: rgba(0, 0, 255, 0.411); /* Transparent blue */
     color: white;  
     text-decoration: none;
 }
@@ -143,6 +148,7 @@ text-decoration: none;
     text-decoration: none;
     padding: 10px;
     display: block;
+    align-items: end;
 }
 .dropdown{
     position: relative;
@@ -155,12 +161,15 @@ text-decoration: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffffff;
+    background-color: rgb(18, 97, 170);
     list-style: none;
     padding: 0;
-    width: 150px;
+    width: 180px;
     z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.541);
+}
+.specific:hover{
+    background-color: rgba(122, 9, 214, 0.575);
 }
 
 .dropdown-toggle {
@@ -178,9 +187,8 @@ text-decoration: none;
 
 .dropdown:hover .dropdown-menu {
     display: block;
+    background-color: rgb(18, 97, 170);
 }
-
-
 
 .card-container{
     color: whitesmoke;
@@ -255,7 +263,7 @@ text-decoration: none;
     background-color: #00000096; /* White background */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .card-background ::before{
@@ -354,6 +362,98 @@ form-container-login{
     text-align: center;
 }
 
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+        margin-right: 10px;
+    }
+    
+    .navbar {
+        height: auto;
+        min-height: 80px;
+    }
+    
+    .navbar-container {
+        width: 100%;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(18, 97, 170, 0.95);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        max-height: 100vh;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-list a {
+        padding: 15px 20px;
+        display: block;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background-color: rgba(12, 70, 124, 0.95);
+    }
+    
+    .dropdown-menu li a {
+        padding-left: 40px;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-toggle:after {
+        content: '+';
+        float: right;
+    }
+    
+    .dropdown.active .dropdown-toggle:after {
+        content: '-';
+    }
+}
+
 /* Contenedor del formulario */
 .form-section {
     display: flex;
@@ -436,3 +536,26 @@ form a{
 form p{
     color: var(--white);
 }
+.search-bar{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 300px;
+    background-color: #00000096;
+}
+
+.tab-select{
+    display: flex;
+    width: 200px;
+    background-color: #00000096;
+    align-items: center;
+    justify-content: center;
+}
+.tab-search{
+    color: white;
+    text-align: center;
+    background-color: #abf500;
+    border: 2px dotted black;
+}   

@@ -1,3 +1,4 @@
+//Buttons redirection
 function OnClickButton(id, link){
     const button = document.getElementById(id);
     
@@ -36,16 +37,25 @@ function RedirectTo(link){
 }
 
 
-
-
 OnClickButtonClass("redirectToLogIn", "login.html")
+OnClickButtonClass("redirectToIndex", "index.html")
+
+//register 
+const accounts= []
+
+document.querySelector("registerForm").addEventListener("submit", function(){
+
+})
+
+function CaptureDataForm(){
+    const name = document.querySelector("[name = 'name']").value
+    const userName = 
+}
+
+CaptureDataForm();
+//log in
+console.log(CaptureDataForm())
 
 
-console.log("writing");
 
 
-let suma = 1;
-let suma2 = 2;
-
-let resultado = suma + suma2;
-console.log(`El resultado de la suma es: ${resultado}`);
