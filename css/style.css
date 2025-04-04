@@ -19,7 +19,7 @@ nav ul, div header {
 
 }
 body {
-    background-image: url(/project_caribe_dreams/assets/images/playa2.png);
+    background-image: url(../assets/images/playa2.png);
     /* background: linear-gradient(180deg, rgba(58,151,180,1) 0%, rgba(195,186,186,1) 47%, rgba(10,10,10,0.6739028375021884) 100%); */
     background-size: cover;
     background-repeat: no-repeat;
@@ -246,17 +246,24 @@ text-decoration: none;
     --light-grey:#D9D9D9; 
 }
 
-
+.background-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
 
 .welcome-section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: center;
+    width: 100%;
+    margin-top: 50px;
 }
 
-.card-background {
+.card-background{
     max-width: 700px;
     max-height: 450px;
     padding: 0px 20px 20px 20px;
@@ -265,6 +272,7 @@ text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: auto;
 }
+
 
 .card-background ::before{
     content: "";
@@ -292,6 +300,47 @@ text-decoration: none;
     border: none;
     display: block;
 }
+.card-creator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    padding: 0px 20px 20px 20px;
+    margin-top: 70px;
+    background-color: #000000c5; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.cont-creators{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.creators{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: #007bff81;
+    border-radius: 10px;
+    padding: 10px;
+}
+.creators img{
+    max-width: 100px;
+    border-radius: 50%;
+}
+.creators h3{
+    font-size: 1rem;
+    text-align: center;
+}
+.creators p{
+    font-size: 0.7rem;
+    text-align: center;
+}
+/* ------------------------------------------------ */
 .btn-primary {
     display: inline-block;
     padding: 10px 20px;
@@ -347,14 +396,14 @@ text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-form-container-register{
+.form-container-register{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
 }
-form-container-login{
+.form-container-login{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -536,26 +585,104 @@ form a{
 form p{
     color: var(--white);
 }
+
+
+/* Pagina principal */
+.cont-search-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+
 .search-bar{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 300px;
-    background-color: #00000096;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 70%;
+    height: 150px;
+    background-color: #000000ce;
+    border-radius: 10px;
 }
 
 .tab-select{
     display: flex;
-    width: 200px;
-    background-color: #00000096;
     align-items: center;
     justify-content: center;
 }
 .tab-search{
-    color: white;
+    color: rgba(255, 115, 0, 0.856);
+    width: 30%;
     text-align: center;
     background-color: #abf500;
-    border: 2px dotted black;
+    border: 2px dotted #007bff;
 }   
+
+#form-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#form-principal select{
+    height: 30px;
+    border: solid 1px #0056b3;
+    border-radius: 5px;
+    background-color: #ffffffd2;
+}
+.region{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.ciudad{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.servicios{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+/* -------------------------------------- */
+.botones-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 25%;
+    width: 50%;
+    gap: 5px;
+}
+
+.cont-btn-services{
+    width: 100px;
+    height: 25px;
+    background-color: #000000ce;
+    border-radius: 5px 5px 0 0 ;
+    text-align: center;
+    cursor: pointer;
+}   
+.cont-btn-latest{
+    width: 100px;
+    height: 25px;
+    background-color: #00000093;
+    border-radius: 5px 5px 0 0 ;
+    text-align: center;
+    cursor: pointer;
+}
+.cont-btn-event{
+    width: 100px;
+    height: 25px;
+    background-color: #00000093;
+    border-radius: 5px 5px 0 0 ;
+    text-align: center;
+    cursor: pointer;
+}
+.botones-principal a{
+    text-decoration: none;
+    color: #ffffff;
+}

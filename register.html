@@ -6,38 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Caribe Dreams</title>
     <link rel="stylesheet" href="css/style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <script src="./javascript/javascript.js" defer></script>
 </head>
 
 <body>
-    <body>
-        <section class="welcome-section">
-            <div class="card-background"> 
-                <form id="registerForm">
-                    <h2 style="color: white;">Register form</h2> 
-                    <a href="Index.html"><img src="assets/images/logo.png" class="logo"></a>
-                    <label for=" ">Name</label>
-                    <input type="text" name="name" placeholder="Full name" required>
-                    <label for="">Email</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                    <label for=" ">Confirm Email</label>
-                    <input type="email" name="checkEmail" placeholder="Confirm your email" required>
-                    <label for=" ">Phone</label>
-                    <input type="number" name="phoneNumber" placeholder="Phone number" required>
-                    <label for=" ">Password</label>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <label for=" "> ConfirmPassword</label>
-                    <input type="password" name="checkPassword" placeholder="Confirm Password" required> <br><br>
-                    <button type="submit" class="btn-primary">Register</button>
-                    <button type="submit" class="btn-primary">Register with google</button>
-                </form>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Caribe Dreams">
+                        <span>Caribe Dreams</span>
+                    </a>
+                </div>
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </section>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#" class="redirectToIndex">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToAbout">About</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"  class="dropdown-toggle">
+                            Services
+                        </a>                    
+                        <ul class="dropdown-menu">
+                            <li class="specific"><a href="#">CSM</a></li>
+                            <li class="specific"><a href="#">Córdoba</a></li>
+                            <li class="specific"><a href="#">Sucre</a></li>
+                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu">
+                            <li class="specific"><a href="#">Bolívar</a></li>
+                            <li class="specific"><a href="#">Córdoba</a></li>
+                            <li class="specific"><a href="#">Sucre</a></li>
+                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="#"  class="redirectToContact">
+                           Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="redirectToLogIn" >
+                           Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToLogOut"  >
+                           Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>        
+    </div>
+    <section class="welcome-section">
+        <div class="card-background">
+            <form id="registerForm">
+                <h2 style="color: white;">Register form</h2>
+                <a href="Index.html"><img src="assets/images/logo.png" class="logo"></a>
+                <label for=" ">Name</label>
+                <input type="text" name="name" placeholder="Full name" required>
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <label for=" ">Confirm Email</label>
+                <input type="email" name="checkEmail" placeholder="Confirm your email" required>
+                <label for=" ">Phone</label>
+                <input type="number" name="phoneNumber" placeholder="Phone number" required>
+                <label for=" ">Password</label>
+                <input type="password" name="password" placeholder="Password" required>
+                <label for=" "> ConfirmPassword</label>
+                <input type="password" name="checkPassword" placeholder="Confirm Password" required> <br><br>
+                <button type="submit" class="btn-primary">Register</button>
+                <button type="button" class="btn-primary">Register with google</button>
+            </form>
+        </div>
+    </section>
 
-    </body>
 </body>
 
 </html>
