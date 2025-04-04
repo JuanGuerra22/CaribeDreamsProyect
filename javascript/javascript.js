@@ -27,6 +27,7 @@ try {
     OnClickButtonClass("redirectToLogIn", "login.html");
     OnClickButtonClass("redirectToIndex", "index.html");
     OnClickButtonClass("redirectToAbout", "about.html");
+    OnClickButtonClass("redirectToCreators", "creators.html")
 } catch {
     console.error("Error setting up button that redirects", error);
 }
