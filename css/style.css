@@ -34,6 +34,7 @@ body {
     background-size: cover;
     font-family: 'Dosis', 'sans-serif', 'Sansita Swashed', cursive;
 }
+
 label{
     display:flex;
     align-content:center;
@@ -877,7 +878,7 @@ form p{
 
 html, body {
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
     padding: 0;
 }
@@ -912,3 +913,34 @@ html, body {
     transition: all 0.3s ease;
 }
 
+/* ------------------------------------------ */
+.cont-img-city{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.cont-img-city h2{
+    color: #fff;
+    font-size: 2.2rem;
+}
+.cont-ciudades{
+    display: none;
+    justify-content: center;
+    gap: 25px;
+}   
+.img-monteria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.img-monteria h3{
+    font-size: 1rem;
+}
+
+.visible{
+    display: flex;
+}
