@@ -43,7 +43,7 @@ label{
     flex-shrink: 0;
     margin-right: auto; /* Pushes the logo to the left */
     display: flex;
-    align-items: center;
+    padding-left: 60px;
 }
 .navbar {
     position: fixed;
@@ -78,6 +78,7 @@ label{
 {
     height: 80px;
     margin-right: 10px;
+    justify-content: center;
 }
 
 .logo span{
@@ -99,6 +100,8 @@ margin: 0;
 padding: 0;
 z-index: 10;
 }
+
+
 
 .nav-list li a {
     text-decoration: none;
@@ -276,7 +279,7 @@ text-decoration: none;
     background-color: #00000096; /* White background */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: auto;
+    overflow: hidden;
 }
 
 
@@ -301,6 +304,7 @@ text-decoration: none;
 }
 
 .welcome-container .logo {
+    align-items: center;
     max-width: 150px;
     margin: 20px auto;
     border: none;
@@ -711,4 +715,169 @@ form p{
     text-align: center;
     color: white;
     
+}
+
+
+/* Additional styles for the login page */
+.login-card {
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-header h2 {
+    color: #f4a623;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: "Sansita Swashed", cursive;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 16px;
+    padding-left: 0;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #1261a0;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #f4a623;
+    box-shadow: 0 0 8px rgba(244, 166, 35, 0.6);
+}
+
+.forgot-password {
+    text-align: right;
+    margin: 10px 0 20px;
+}
+
+.forgot-password a {
+    color: #1261a0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+    color: #f4a623;
+    text-decoration: underline;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #f4a623;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 0;
+}
+
+.login-btn:hover {
+    background-color: #d88e1a;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.register-link a {
+    color: #1261a0;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #f4a623;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.divider-text {
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Logo styling */
+.login-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.login-logo:hover {
+    transform: scale(1.05);
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
