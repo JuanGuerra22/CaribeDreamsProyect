@@ -268,19 +268,17 @@ text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .card-background{
-    max-width: 700px;
-    max-height: 450px;
+    width: 500px;
+    height: 800px;
     padding: 0px 20px 20px 20px;
     background-color: #00000096; /* White background */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 
 
@@ -386,34 +384,7 @@ text-decoration: none;
     background-color: #5a6268; /* Darker gray on hover */
 }
 
-.register-link {
-    color: #007bff; /* Blue link */
-    text-decoration: none;
-}
 
-.register-link:hover {
-    text-decoration: underline;
-}
-
-
-
-
-.card-register{
-    max-width: 350px;
-    max-height: 450px;
-    padding: 0px 20px 20px 20px;
-    background-color: #00000096; /* black background */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-container-register{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
 .form-container-login{
     display: flex;
     justify-content: center;
@@ -587,7 +558,12 @@ label{
     color: var(--light-grey);
 }
 input{
-    margin: 5px 5px 15px 5px;
+    margin: 5px 5px 10px 5px;
+    font-family: "Dosis";
+}
+select{
+    font-family: "Dosis";
+    font-size: 1rem;
 }
 
 form a{
@@ -615,6 +591,23 @@ form p{
     height: 150px;
     background-color: #000000ce;
     border-radius: 10px;
+}
+.btn-search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 150px;
+
+}
+.btn-search-bar button{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--golden-yellow);
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .tab-select{
@@ -721,17 +714,16 @@ form p{
 
 /* Additional styles for the login page */
 .login-card {
-    max-width: 400px;
+    width: 350px;
+    height: 510px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 .login-header {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .login-header h2 {
@@ -741,25 +733,14 @@ form p{
     font-family: "Sansita Swashed", cursive;
 }
 
-.login-form .form-group {
-    margin-bottom: 20px;
-}
-
-.login-form label {
-    display: block;
-    color: white;
-    margin-bottom: 8px;
-    font-size: 16px;
-    padding-left: 0;
-}
-
 .login-form input {
     width: 100%;
-    padding: 12px 15px;
+    height: 40px;
+    padding-left: 10px;
     border-radius: 5px;
     border: 1px solid #1261a0;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -771,7 +752,6 @@ form p{
 
 .forgot-password {
     text-align: right;
-    margin: 10px 0 20px;
 }
 
 .forgot-password a {
@@ -789,7 +769,7 @@ form p{
 .login-btn {
     display: block;
     width: 100%;
-    padding: 12px;
+    height: 40px;
     background-color: #f4a623;
     color: black;
     border: none;
@@ -798,7 +778,7 @@ form p{
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .login-btn:hover {
@@ -807,7 +787,7 @@ form p{
 
 .register-link {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
     color: white;
 }
 
@@ -824,7 +804,7 @@ form p{
 .divider {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .divider-line {
@@ -884,34 +864,6 @@ html, body {
 }
 
 
-#register-card{
-    
-    max-width: 700px;
-    max-height: fit-content;
-    padding: 0px 20px 20px 20px;
-    background-color: #00000096; /* White background */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-
-}
-#register-card label {
-    display: block;
-    color: white;
-    margin-bottom: 8px;
-    font-size: 16px;
-    padding-left: 0;
-}
-
-#register-card input {
-    width: 75%;
-    padding: 12px 15px;
-    border-radius: 5px;
-    border: 1px solid #1261a0;
-    background-color: rgba(255, 255, 255, 0.9);
-    font-size: 10px;
-    transition: all 0.3s ease;
-}
 
 /* ------------------------------------------ */
 .cont-img-city{

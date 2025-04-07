@@ -3,11 +3,11 @@ x<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>    
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <title>Creators - Caribe Dreams</title>    
     <script src="./javascript/javascript.js" defer></script>
 </head>
 <body>
@@ -20,27 +20,30 @@ x<!DOCTYPE html>
                         <span>Caribe Dreams</span>
                     </a>
                 </div>
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#"  class="redirectToIndex">Home</a>
+                        <a href="#" class="redirectToIndex">Home</a>
                     </li>
                     <li>
-                        <a href="#"  class="redirectToCreators">Creators</a>
+                        <a href="#" class="redirectToCreators">Creators</a>
                     </li>
-                    <li>
-                        <a href="#"  id="">
-                            Services
-                        </a>
+                    <li class="dropdown">
+                        <a href="#"  class="dropdown-toggle">About</a>                    
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Destinations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Bolívar</a></li>
-                            <li><a href="#">Córdoba</a></li>
-                            <li><a href="#">Sucre</a></li>
-                            <li><a href="#">San Andrés y Providencia</a></li>
+                            <li class="specific"><a href="#">Bolívar</a></li>
+                            <li class="specific"><a href="#">Córdoba</a></li>
+                            <li class="specific"><a href="#">Sucre</a></li>
+                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
                         </ul>
                     </li>
                     
@@ -50,13 +53,13 @@ x<!DOCTYPE html>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="redirectToLogIn" >
+                        <a href="login.html" class="redirectToLogIn" >
                            Login
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="redirectToLogOut"  >
-                           Log out|
+                        <a href="register.html" class="edirrectToLogOut hidden"  >
+                           Register
                         </a>
                     </li>
                 </ul>
