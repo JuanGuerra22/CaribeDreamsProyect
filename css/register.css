@@ -56,6 +56,7 @@
 }
 #registerForm h2{
     color: #ffffff;
+    margin-bottom: 10px;
 }
 #registerForm span{
     color: #ffffff;
@@ -147,4 +148,11 @@
 
 .social-register-btn:hover {
     background-color: #3367d6;
+}
+
+.nit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

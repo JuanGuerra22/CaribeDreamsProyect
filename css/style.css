@@ -786,9 +786,12 @@ form p{
 }
 
 .register-link {
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin-top: 5px;
     color: white;
+    gap: 7px;
 }
 
 .register-link a {

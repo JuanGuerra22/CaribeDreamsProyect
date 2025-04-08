@@ -29,16 +29,16 @@ x<!DOCTYPE html>
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#" class="redirectToIndex">Home</a>
+                        <a data-i18n="menu-inicio" href="#" class="redirectToIndex">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="redirectToCreators">Creators</a>
+                        <a href="#" data-i18n="menu-creadores" class="redirectToCreators">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#"  class="dropdown-toggle">About</a>                    
+                        <a href="#" data-i18n="menu-acerca-de"  class="dropdown-toggle">About</a>                    
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <a href="#" data-i18n="menu-destinos" class="dropdown-toggle">Destinations</a>
                         <ul class="dropdown-menu">
                             <li class="specific"><a href="#">Bolívar</a></li>
                             <li class="specific"><a href="#">Córdoba</a></li>
@@ -46,21 +46,19 @@ x<!DOCTYPE html>
                             <li class="specific"><a href="#">San Andrés y Providencia</a></li>
                         </ul>
                     </li>
-                    
                     <li>
-                        <a href="#"  class="redirectToContact">
-                           Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.html" class="redirectToLogIn" >
+                        <a href="login.html" data-i18n="menu-iniciar-sesion" class="redirectToLogIn" >
                            Login
                         </a>
                     </li>
                     <li>
-                        <a href="register.html" class="edirrectToLogOut hidden"  >
+                        <a href="select-register.html" data-i18n="menu-registro" class="edirrectToLogOut hidden"  >
                            Register
                         </a>
+                    </li>
+                    <li>
+                        <button id="btn-english">English</button>
+                        <button id="btn-spanish">Español</button>
                     </li>
                 </ul>
             </nav>
@@ -69,7 +67,7 @@ x<!DOCTYPE html>
     <section class="welcome-section">
         <div class="card-creator">
             <div class="welcome-container">
-                <h1>Creators</h1>
+                <h1 data-i18n="creadores">Creators</h1>
                 <div class="cont-creators">
                     <div class="creators">
                         <img src="assets/images/user.png" alt="">
@@ -104,5 +102,6 @@ x<!DOCTYPE html>
             </div>
         </div>
     </section>
+    <script src="javascript/traducciones.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+.section-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 85px;
+    gap: 60px;
+}
+.login-card-en {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 350px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+}
+
+.login-en-header h2 {
+    color: #f4a623;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: "Sansita Swashed", cursive;
+}
+.login-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.login-logo:hover {
+    transform: scale(1.05);
+}
+.version{
+    color: #f5f5f5;
+}
+
+.login-en-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    background-color: #f4a623;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+}
+
+.login-en-btn:hover {
+    background-color: #d88e1a;
+}
+.guest-en-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    background-color: #f5f5f5;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+}
+.guest-en-btn:hover {
+    background-color: #bebebe;
+}

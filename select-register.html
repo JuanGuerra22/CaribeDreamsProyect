@@ -15,10 +15,9 @@
     <script src="javascript/javascript.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/welcome.css">
-    <title>Welcome - Caribe Dreams</title>
+    <title>Register - Caribe Dreams</title>
     
 </head>
-
 <body>
     <div class="background-container">
         <header class="navbar">
@@ -29,37 +28,34 @@
                         <span>Caribe Dreams</span>
                     </a>
                 </div>
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <button id="btn-english">English</button>
+                        <button id="btn-spanish">Español</button>
+                    </li>
+                </ul>
+            </nav>
         </header>
     </div>
     <section class="section-welcome">
         <div class="login-card-en">
             <div class="login-en-header">
-                <p class="version">English Version</p>
-                <h2>Welcome to Caribe Dreams</h2>
+                <h2 data-i18n="mensaje-registro">How would you like to register?</h2>
                 <a href="#"><img src="assets/images/logo.png" alt="Caribe Dreams" class="login-logo"></a>
             </div>
-                <a href="login.html" type="button" class="login-en-btn">Log In</a>
-                <div class="register-link">
-                    <p>Not registered yet? <a href="select-register.html">Create account</a></p>
-                </div>
-                <a href="Index.html" class="guest-en-btn">Continue as guest</a>
-        </div>
-
-        <div class="login-card-en">
-            <div class="login-en-header">
-                <p class="version">Versión en Español</p>
-                <h2>Bienvenido a Caribe Dreams</h2>
-                <a href="#"><img src="assets/images/logo.png" alt="Caribe Dreams" class="login-logo"></a>
-            </div>
-                <a href="login.html" type="button" class="login-en-btn">Iniciar Sesión</a>
-                <div class="register-link">
-                    <p>¿No estas Registrado? <a href="select-register.html">Crea una Cuenta</a></p>
-                </div>
-                <a href="Index.html" class="guest-en-btn">Continuar como Invitado</a>
+                <a href="register-enterprise.html" class="login-en-btn" data-i18n="reg-empresa">Enterprise Register</a>
+                <a href="register.html" class="guest-en-btn" data-i18n="reg-usuario">User Register</a>
         </div>
     </section>
 
-
+    <script src="javascript/traducciones.js" type="module"></script>
 </body>
 
 </html>

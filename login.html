@@ -33,38 +33,8 @@
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#" class="redirectToIndex">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="redirectToCreators">Creators</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#"  class="dropdown-toggle">About</a>                    
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Destinations</a>
-                        <ul class="dropdown-menu">
-                            <li class="specific"><a href="#">Bolívar</a></li>
-                            <li class="specific"><a href="#">Córdoba</a></li>
-                            <li class="specific"><a href="#">Sucre</a></li>
-                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <a href="#"  class="redirectToContact">
-                           Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.html" class="redirectToLogIn" >
-                           Login
-                        </a>
-                    </li>
-                    <li>
-                        <a href="register.html" class="edirrectToLogOut hidden"  >
-                           Register
-                        </a>
+                        <button id="btn-english">English</button>
+                        <button id="btn-spanish">Español</button>
                     </li>
                 </ul>
             </nav>
@@ -76,38 +46,37 @@
         <div class="login-card">
             <div class="login-header">
                 <a href="index.html"><img src="assets/images/logo.png" alt="Caribe Dreams" class="login-logo"></a>
-                <h2>Welcome Back</h2>
+                <h2 data-i18n="bienvenido">Welcome Back</h2>
             </div>
             <form id="login-form" class="login-form">
                 <div class="form-group">
-                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+                    <input  type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" data-i18n="[placeholder]email_placeholder" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" data-i18n="[placeholder]pass_placeholder" required>
                 </div>
                 <div class="forgot-password">
-                    <a href="passwordForgotten.html">Forgot password?</a>
+                    <a href="passwordForgotten.html" data-i18n="forgot-password">Forgot password?</a>
                 </div>
-                <button type="submit" class="login-btn">Log In</button>
+                <button type="submit" class="login-btn" data-i18n="menu-iniciar-sesion">Log In</button>
                 
                 <div class="divider">
                     <div class="divider-line"></div>
-                    <div class="divider-text">OR</div>
+                    <div class="divider-text" data-i18n="o">OR</div>
                     <div class="divider-line"></div>
                 </div>
                 
                 <div class="social-login">
-                    <button type="button" class="social-btn">
-                        Continue with Google
-                    </button>
+                    <button type="button" class="social-btn" data-i18n="google">Continue with Google</button>
                 </div>
                 
                 <div class="register-link">
-                    <p>Not registered yet? <a href="register.html">Create account</a></p>
+                    <p data-i18n="no-registrado">Not registered yet? </p> <a href="select-register.html" data-i18n="crear-cuenta">Create account</a>
                 </div>
             </form>
         </div>
     </section>
+    <script src="javascript/traducciones.js" type="module"></script>
 </body>
 
 </html>

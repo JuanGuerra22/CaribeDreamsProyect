@@ -36,16 +36,16 @@
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#" class="redirectToIndex">Home</a>
+                        <a data-i18n="menu-inicio" href="#" class="redirectToIndex">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="redirectToCreators">Creators</a>
+                        <a href="#" data-i18n="menu-creadores" class="redirectToCreators">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#"  class="dropdown-toggle">About</a>                    
+                        <a href="#" data-i18n="menu-acerca-de"  class="dropdown-toggle">About</a>                    
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <a href="#" data-i18n="menu-destinos" class="dropdown-toggle">Destinations</a>
                         <ul class="dropdown-menu">
                             <li class="specific"><a href="#">Bolívar</a></li>
                             <li class="specific"><a href="#">Córdoba</a></li>
@@ -53,21 +53,19 @@
                             <li class="specific"><a href="#">San Andrés y Providencia</a></li>
                         </ul>
                     </li>
-                    
                     <li>
-                        <a href="#"  class="redirectToContact">
-                           Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.html" class="redirectToLogIn" >
+                        <a href="login.html" data-i18n="menu-iniciar-sesion" class="redirectToLogIn" >
                            Login
                         </a>
                     </li>
                     <li>
-                        <a href="register.html" class="edirrectToLogOut hidden"  >
+                        <a href="select-register.html" data-i18n="menu-registro" class="edirrectToLogOut hidden"  >
                            Register
                         </a>
+                    </li>
+                    <li>
+                        <button id="btn-english">English</button>
+                        <button id="btn-spanish">Español</button>
                     </li>
                 </ul>
             </nav>
@@ -77,31 +75,31 @@
     <div class="cont-search-bar">
         <section id="index-message-container">
             <div id="index-message">
-            <h2>"The trip of your dreams, just as you imagined it, with everything you desire within your grasp."</h2>
+            <h2 data-i18n="mensaje-bienvenida">"The trip of your dreams, just as you imagined it, with everything you desire within your grasp."</h2>
             </div>
         </section>
         <section class="botones-principal">
             <div class="cont-btn-services">
-                <a href="#" class="btn-services">Services</a>
+                <a href="#" class="btn-services" data-i18n="servicios">Services</a>
             </div>
             <div class="cont-btn-latest">
-                <a href="#" class="btn-latest">Latest posts</a>
+                <a href="#" class="btn-latest" data-i18n="publicaciones">Latest posts</a>
             </div>
             <div class="cont-btn-event">
-                <a href="#" class="btn-event">Event Board</a>
+                <a href="#" class="btn-event" data-i18n="eventos">Event Board</a>
             </div>
         </section>
         <section class="search-bar">
             <div class="tab-select">
                 <form action="" id="form-principal">
                     <div class="region">
-                        <label for="region">Select your region:</label>
+                        <label for="region" data-i18n="select-regiones">Select your region:</label>
                         <select name="region" id="region">
                             <option value="">Region 5</option>
                         </select>
                     </div>
                     <div class="ciudad">
-                        <label for="ciudad">Select your city:</label>
+                        <label for="ciudad" data-i18n="select-ciudad">Select your city:</label>
                         <select name="ciudad" id="ciudad">
                             <option value=""></option>
                             <option value="san-andres">San Andrés y Providencia</option>
@@ -111,7 +109,7 @@
                         </select>
                     </div>
                     <div class="servicios">
-                        <label for="">Choose your desired services</label>
+                        <label for="servicios" data-i18n="select-servicios">Choose your desired services</label>
                         <select name="servicios" id="servicios">
                             <option value=""></option>
                             <option value="">Accommodation and Hospitality</option>
@@ -130,7 +128,7 @@
                         </select>
                     </div>
                     <div class="btn-search-bar">
-                        <button type="button">Search</button>
+                        <button type="button" data-i18n="btn-buscar">Search</button>
                     </div>
                 </form>
             </div>
@@ -238,6 +236,7 @@
     </div>
 </section>
 <script src="javascript/img-cities.js"></script>
+<script src="javascript/traducciones.js" type="module"></script>
 </body>
 
 <footer>

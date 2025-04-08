@@ -36,7 +36,6 @@
             </div>
             <nav class="nav-menu">
                 <ul class="nav-list">
-
                     <li>
                         <button id="btn-english">English</button>
                         <button id="btn-spanish">Español</button>
@@ -49,12 +48,22 @@
         <div class="card-background-register" id="register-card">
             <form id="registerForm">
                 <a href="Index.html"><img src="assets/images/logo.png" class="register-logo"></a>
-                <h2>Create New User Account</h2>
+                <h2 data-i18n="title-regist-emp">Create New Enterprise Account</h2>
                 <div class="name-numbre">
                     <span class="material-symbols-outlined">id_card</span>
-                    <input type="text" name="name" placeholder="Full name" required>
+                    <input type="text" name="name" placeholder="Full Username" required>
                     <span class="material-symbols-outlined">phone_iphone</span>
                     <input type="number" name="phoneNumber" placeholder="Phone number" required>
+                </div>
+                <div class="name-numbre">
+                    <span class="material-symbols-outlined">business_center</span>
+                    <input type="text" name="name" placeholder="Business Name" required>
+                    <span class="material-symbols-outlined">phone_in_talk</span>
+                    <input type="number" name="phoneNumber" placeholder="Business Number" required>
+                </div>
+                <div class="nit">
+                    <span class="material-symbols-outlined">fingerprint</span>
+                    <input type="text" placeholder="Business ID NIT / Tax Number">
                 </div>
                 <div class="email-register">
                     <span class="material-symbols-outlined">mail</span>
@@ -70,15 +79,13 @@
                     <input type="password" name="checkPassword" placeholder="Confirm Password" required> <br><br>
                 </div>
                 <div class="cont-btn-register">
-                    <button type="submit" class="register-btn">Register</button>
-                    <p>OR</p>
-                    <button type="button" class="social-register-btn">Continue with Google</button>
+                    <button type="submit" class="register-btn" data-i18n="menu-registro">Register</button>
                 </div>
             </form>
         </div>
     </section>
+
     
     <script src="javascript/traducciones.js" type="module"></script>
 </body>
-
 </html>
