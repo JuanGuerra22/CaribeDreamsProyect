@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Check if user is authenticated as an enterprise
 function checkEnterpriseAuth() {
+    // Check for the registration flag
+    const justRegistered = localStorage.getItem('justRegistered');
+    
+    // Clear the flag immediately
+    if (justRegistered) {
+        localStorage.removeItem('justRegistered');
+    }
+    
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             // User is signed in, now check if they're an enterprise
@@ -28,10 +36,19 @@ function checkEnterpriseAuth() {
                     if (doc.exists) {
                         // This is an enterprise user, load their data
                         loadEnterpriseData(doc.data());
+                        
+                        // We're coming directly from registration, show a welcome message
+                        if (justRegistered) {
+                            showMessage("¡Bienvenido! Tu cuenta empresarial ha sido creada exitosamente.", "success");
+                        }
                     } else {
                         // Not an enterprise user, redirect to home
                         console.log("User is not an enterprise account");
-                        window.location.href = "index.html";
+                        showMessage("Esta área es solo para cuentas empresariales", "error");
+                        
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 2000);
                     }
                 })
                 .catch((error) => {

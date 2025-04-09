@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
         window.firebaseAuth.registerEnterprise(userData.email, userData.password, userData)
             .then((user) => {
                 console.log("Enterprise registration successful:", user);
-                showMessage("Registration successful! Redirecting to login...", "success");
+                showMessage("Registration successful! Redirecting to dashboard...", "success");
                 
                 // Reset form
                 form.reset();
                 
-                // Redirect to enterprise dashboard or login after a brief delay
+                // Redirect directly to enterprise dashboard after a brief delay
                 setTimeout(() => {
                     window.location.href = "enterprise-dashboard.html";
                 }, 2000);

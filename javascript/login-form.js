@@ -144,7 +144,7 @@ function checkUserTypeAndRedirect(user) {
     firebase.firestore().collection('enterprises').doc(user.uid).get()
         .then((doc) => {
             if (doc.exists) {
-                // Es un usuario empresa, redirigir al dashboard
+                // Es un usuario empresa, redirigir directamente al dashboard
                 window.location.href = "enterprise-dashboard.html";
             } else {
                 // Es un usuario regular, redirigir al index

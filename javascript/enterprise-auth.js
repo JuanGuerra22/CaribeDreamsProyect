@@ -34,6 +34,11 @@ function registerEnterprise(email, password, userData) {
             })
             .then(() => {
                 console.log("Enterprise registered successfully:", user);
+                
+                // Set a flag in localStorage to indicate we're coming from registration
+                // This helps dashboard recognize we're already authenticated
+                localStorage.setItem('justRegistered', 'true');
+                
                 return user;
             });
         })
