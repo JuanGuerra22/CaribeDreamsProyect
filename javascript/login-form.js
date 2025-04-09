@@ -1,60 +1,59 @@
-// Updated login form handler - add this to your javascript.js file or create a new one
-
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("#login-form");
-    if (!form) {
-        console.error("Login form not found.");
-        return;
-    }
-
-    form.addEventListener("submit", function (e) {
+// Manejador del formulario de inicio de sesión
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("login-form");
+    if (!loginForm) return;
+    
+    loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
-        console.log("Form submission prevented for Firebase login");
-
-        // Get user data from form
+        
+        // Obtener datos del formulario
         const email = document.querySelector("[name='loginEmail']").value.trim();
         const password = document.querySelector("[name='loginPassword']").value.trim();
         
-        // Validate form
+        // Validar formulario
         if (!email || !password) {
-            showMessage("Please enter both email and password", "error");
+            showMessage("Por favor ingrese email y contraseña", "error");
             return;
         }
         
-        // Show loading indicator
+        // Mostrar indicador de carga
         showLoading(true);
         
-        // Login user with Firebase
-        window.firebaseAuth.loginUser(email, password)
-            .then((user) => {
-                console.log("Login successful:", user);
-                showMessage("Login successful! Redirecting...", "success");
+        // Iniciar sesión con Firebase
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log("Inicio de sesión exitoso:", user);
                 
-                // Reset form
-                form.reset();
+                // Actualizar UI inmediatamente
+                updateAuthUI(user);
                 
-                // Redirect to index after a brief delay
+                showMessage("Inicio de sesión exitoso! Redirigiendo...", "success");
+                
+                // Esperar un momento y luego redirigir
                 setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 2000);
+                    // Verificar si es usuario empresa o regular para redirigir
+                    checkUserTypeAndRedirect(user);
+                }, 1500);
             })
             .catch((error) => {
-                console.error("Login error:", error);
-                let errorMessage = "Login failed: ";
+                console.error("Error de inicio de sesión:", error);
                 
-                // Handle specific Firebase error codes
+                let errorMessage = "Error al iniciar sesión: ";
+                
+                // Manejar códigos de error específicos
                 switch (error.code) {
                     case 'auth/invalid-email':
-                        errorMessage += "Invalid email format.";
+                        errorMessage += "Formato de email inválido.";
                         break;
                     case 'auth/user-disabled':
-                        errorMessage += "This account has been disabled.";
+                        errorMessage += "Esta cuenta ha sido deshabilitada.";
                         break;
                     case 'auth/user-not-found':
-                        errorMessage += "No account found with this email.";
+                        errorMessage += "No existe cuenta con este email.";
                         break;
                     case 'auth/wrong-password':
-                        errorMessage += "Incorrect password.";
+                        errorMessage += "Contraseña incorrecta.";
                         break;
                     default:
                         errorMessage += error.message;
@@ -67,67 +66,101 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
     
-    // Handle Google sign in button if it exists
-    const googleBtn = document.querySelector(".btn-google");
+    // Botón de inicio de sesión con Google
+    const googleBtn = document.querySelector(".social-btn");
     if (googleBtn) {
         googleBtn.addEventListener("click", function() {
-            // Show loading indicator
+            // Mostrar indicador de carga
             showLoading(true);
             
-            // Sign in with Google
-            window.firebaseAuth.signInWithGoogle()
-                .then((user) => {
-                    console.log("Google sign-in successful:", user);
-                    showMessage("Google sign-in successful! Redirecting...", "success");
+            // Proveedor de autenticación Google
+            const provider = new firebase.auth.GoogleAuthProvider();
+            
+            // Iniciar sesión con Google
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    const user = result.user;
+                    const isNewUser = result.additionalUserInfo.isNewUser;
                     
-                    // Redirect to index after a brief delay
+                    console.log("Inicio de sesión con Google exitoso:", user);
+                    
+                    // Actualizar UI inmediatamente
+                    updateAuthUI(user);
+                    
+                    // Si es un nuevo usuario, guardar datos adicionales
+                    if (isNewUser) {
+                        return firebase.firestore().collection('users').doc(user.uid).set({
+                            name: user.displayName || '',
+                            email: user.email,
+                            photoURL: user.photoURL || '',
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        })
+                        .then(() => {
+                            showMessage("Cuenta creada con Google exitosamente! Redirigiendo...", "success");
+                            return user;
+                        });
+                    } else {
+                        showMessage("Inicio de sesión con Google exitoso! Redirigiendo...", "success");
+                        return user;
+                    }
+                })
+                .then((user) => {
+                    // Esperar un momento y luego redirigir
                     setTimeout(() => {
-                        window.location.href = "index.html";
-                    }, 2000);
+                        // Verificar si es usuario empresa o regular para redirigir
+                        checkUserTypeAndRedirect(user);
+                    }, 1500);
                 })
                 .catch((error) => {
-                    console.error("Google sign-in error:", error);
-                    showMessage("Google sign-in failed: " + error.message, "error");
+                    console.error("Error de inicio de sesión con Google:", error);
+                    showMessage("Error al iniciar sesión con Google: " + error.message, "error");
                 })
                 .finally(() => {
                     showLoading(false);
                 });
         });
     }
-    
-    // Handle password reset link if it exists
-    const resetPasswordLink = document.querySelector("a[href='passwordForgotten.html']");
-    if (resetPasswordLink) {
-        resetPasswordLink.addEventListener("click", function(e) {
-            e.preventDefault();
-            
-            // Prompt user for email
-            const email = prompt("Please enter your email to receive a password reset link:");
-            
-            if (email) {
-                // Show loading indicator
-                showLoading(true);
-                
-                // Send password reset email
-                window.firebaseAuth.resetPassword(email)
-                    .then(() => {
-                        showMessage("Password reset email sent. Please check your inbox.", "success");
-                    })
-                    .catch((error) => {
-                        console.error("Password reset error:", error);
-                        showMessage("Password reset failed: " + error.message, "error");
-                    })
-                    .finally(() => {
-                        showLoading(false);
-                    });
-            }
-        });
-    }
 });
 
-// Helper function to show messages to the user
+// Actualizar UI con estado de autenticación
+function updateAuthUI(user) {
+    if (!user) return;
+    
+    // Actualizar elementos del navbar
+    const logoutBtn = document.querySelector(".redirectToLogOut");
+    const loginBtn = document.querySelector(".redirectToLogIn");
+    const registerBtn = document.querySelector(".redirectToRegister");
+    
+    if (logoutBtn) logoutBtn.classList.remove("hidden");
+    if (loginBtn) loginBtn.classList.add("hidden");
+    if (registerBtn) registerBtn.classList.add("hidden");
+}
+
+// Verificar tipo de usuario y redirigir a la página correspondiente
+function checkUserTypeAndRedirect(user) {
+    if (!user) return;
+    
+    // Verificar si es un usuario empresa
+    firebase.firestore().collection('enterprises').doc(user.uid).get()
+        .then((doc) => {
+            if (doc.exists) {
+                // Es un usuario empresa, redirigir al dashboard
+                window.location.href = "enterprise-dashboard.html";
+            } else {
+                // Es un usuario regular, redirigir al index
+                window.location.href = "index.html";
+            }
+        })
+        .catch((error) => {
+            console.error("Error al verificar tipo de usuario:", error);
+            // En caso de error, redirigir al index
+            window.location.href = "index.html";
+        });
+}
+
+// Mostrar mensajes al usuario
 function showMessage(message, type) {
-    // Check if message container exists, create if not
+    // Verificar si existe el contenedor de mensajes, crear si no
     let messageContainer = document.querySelector(".message-container");
     if (!messageContainer) {
         messageContainer = document.createElement("div");
@@ -135,26 +168,26 @@ function showMessage(message, type) {
         document.querySelector("#login-form").insertAdjacentElement("beforebegin", messageContainer);
     }
     
-    // Create message element
+    // Crear elemento de mensaje
     const messageElement = document.createElement("div");
     messageElement.className = `message ${type}`;
     messageElement.textContent = message;
     
-    // Clear previous messages
+    // Limpiar mensajes anteriores
     messageContainer.innerHTML = "";
     
-    // Add new message
+    // Agregar nuevo mensaje
     messageContainer.appendChild(messageElement);
     
-    // Remove message after a delay
+    // Eliminar mensaje después de un tiempo
     setTimeout(() => {
         messageElement.remove();
     }, 5000);
 }
 
-// Helper function to show/hide loading indicator
+// Mostrar/ocultar indicador de carga
 function showLoading(isLoading) {
-    // Check if loading container exists, create if not
+    // Verificar si existe el contenedor de carga, crear si no
     let loadingContainer = document.querySelector(".loading-container");
     if (!loadingContainer && isLoading) {
         loadingContainer = document.createElement("div");

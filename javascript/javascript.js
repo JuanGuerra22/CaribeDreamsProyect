@@ -490,7 +490,7 @@ function updateUIForAuthenticatedUser(user) {
             userInfoLi.innerHTML = `
                 <span class="user-display">
                     <span class="auth-status-indicator logged-in"></span>
-                    ${user.displayName || user.email || "Usuario"}
+                    ${"Usuario administrador"}
                 </span>
             `;
             

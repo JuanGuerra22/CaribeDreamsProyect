@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-    <title>Register - Caribe Dreams</title>
-    <script src="./javascript/javascript.js" defer></script>
-    <script src="./javascript/register.js" defer></script>
-
+    <title>Enterprise Registration - Caribe Dreams</title>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Custom Firebase Authentication -->
+    <script src="javascript/firebase-auth.js"></script>
+    <script src="javascript/enterprise-auth.js"></script>
+    <script src="javascript/javascript.js" defer></script>
+    <script src="javascript/auth-state.js" defer></script>
+    <script src="javascript/enterprise-register.js" defer></script>
+    <script src="javascript/traducciones.js" type="module"></script>
+    
+    <!-- CSS for authentication UI -->
+    <link rel="stylesheet" href="css/auth-styles.css">
 </head>
 
 <body>
@@ -37,6 +49,39 @@
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
+                        <a href="#" class="redirectToIndex">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToCreators">Creators</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About</a>                    
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu">
+                            <li class="specific"><a href="#">Bolívar</a></li>
+                            <li class="specific"><a href="#">Córdoba</a></li>
+                            <li class="specific"><a href="#">Sucre</a></li>
+                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToContact">
+                           Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="redirectToLogIn">
+                           Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="redirectToLogOut hidden">
+                           Register
+                        </a>
+                    </li>
+                    <li>
                         <button id="btn-english">English</button>
                         <button id="btn-spanish">Español</button>
                     </li>
@@ -51,19 +96,19 @@
                 <h2 data-i18n="title-regist-emp">Create New Enterprise Account</h2>
                 <div class="name-numbre">
                     <span class="material-symbols-outlined">id_card</span>
-                    <input type="text" name="name" placeholder="Full Username" data-i18n="[placeholder]nombre-completo" required>
+                    <input type="text" name="name" placeholder="Full Name" data-i18n="[placeholder]nombre-completo" required>
                     <span class="material-symbols-outlined">phone_iphone</span>
                     <input type="number" name="phoneNumber" placeholder="Phone number" data-i18n="[placeholder]numero-cel" required>
                 </div>
                 <div class="name-numbre">
                     <span class="material-symbols-outlined">business_center</span>
-                    <input type="text" name="name" placeholder="Business Name" data-i18n="[placeholder]nombre-negocio" required>
+                    <input type="text" name="businessName" placeholder="Business Name" data-i18n="[placeholder]nombre-negocio" required>
                     <span class="material-symbols-outlined">phone_in_talk</span>
-                    <input type="number" name="phoneNumber" placeholder="Business Number" data-i18n="[placeholder]numero-negocio" required>
+                    <input type="number" name="businessPhone" placeholder="Business Number" data-i18n="[placeholder]numero-negocio" required>
                 </div>
                 <div class="nit">
                     <span class="material-symbols-outlined">fingerprint</span>
-                    <input type="text" placeholder="Business ID NIT / Tax Number" data-i18n="[placeholder]nit-negocio">
+                    <input type="text" name="nit" placeholder="Business ID NIT / Tax Number" data-i18n="[placeholder]nit-negocio" required>
                 </div>
                 <div class="email-register">
                     <span class="material-symbols-outlined">mail</span>
@@ -84,8 +129,5 @@
             </form>
         </div>
     </section>
-
-    
-    <script src="javascript/traducciones.js" type="module"></script>
 </body>
 </html>

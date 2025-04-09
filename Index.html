@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="javascript/javascript.js" defer></script>
-    <link rel="stylesheet" href="css/style.css">
-    <title>Caribe Dreams</title>
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/auth-styles.css">
+        <title>Caribe Dreams</title>
+        
+        <!-- Firebase SDKs -->
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+        
+        <!-- Custom JS Files -->
+        <script src="javascript/firebase-auth.js"></script>
+        <script src="javascript/enterprise-auth.js"></script>
+        <script src="javascript/javascript.js" defer></script>
+        <script src="javascript/auth-state.js" defer></script>
+    </head>
 <body>
 
     <div class="background-container">
@@ -36,16 +46,16 @@
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a data-i18n="menu-inicio" href="#" class="redirectToIndex">Home</a>
+                        <a href="#" class="redirectToIndex">Home</a>
                     </li>
                     <li>
-                        <a href="#" data-i18n="menu-creadores" class="redirectToCreators">Creators</a>
+                        <a href="#" class="redirectToCreators">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-i18n="menu-acerca-de"  class="dropdown-toggle">About</a>                    
+                        <a href="#" class="dropdown-toggle">About</a>                    
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-i18n="menu-destinos" class="dropdown-toggle">Destinations</a>
+                        <a href="#" class="dropdown-toggle">Destinations</a>
                         <ul class="dropdown-menu">
                             <li class="specific"><a href="#">Bolívar</a></li>
                             <li class="specific"><a href="#">Córdoba</a></li>
@@ -53,20 +63,29 @@
                             <li class="specific"><a href="#">San Andrés y Providencia</a></li>
                         </ul>
                     </li>
+                    
                     <li>
-                        <a href="login.html" data-i18n="menu-iniciar-sesion" class="redirectToLogIn" >
+                        <a href="#" class="redirectToContact">
+                           Contact
+                        </a>
+                    </li>
+                    <!-- Botones de autenticación - Asegúrate de que todos los archivos tengan esta estructura -->
+                    <li>
+                        <a href="login.html" class="redirectToLogIn">
                            Login
                         </a>
                     </li>
                     <li>
-                        <a href="select-register.html" data-i18n="menu-registro" class="edirrectToLogOut hidden"  >
+                        <a href="register.html" class="redirectToRegister">
                            Register
                         </a>
                     </li>
                     <li>
-                        <button id="btn-english">English</button>
-                        <button id="btn-spanish">Español</button>
+                        <a href="#" class="redirectToLogOut hidden">
+                           Log out
+                        </a>
                     </li>
+                    <!-- Fin de botones de autenticación -->
                 </ul>
             </nav>
         </header>

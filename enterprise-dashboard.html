@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <title>Enterprise Dashboard - Caribe Dreams</title>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Custom JS Files -->
+    <script src="javascript/firebase-auth.js"></script>
+    <script src="javascript/enterprise-auth.js"></script>
+    <script src="javascript/javascript.js" defer></script>
+    <script src="javascript/auth-state.js" defer></script>
+    <script src="javascript/enterprise-dashboard.js" defer></script>
+</head>
+
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Caribe Dreams">
+                        <span>Caribe Dreams</span>
+                    </a>
+                </div>
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#" class="redirectToIndex">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToCreators">Creators</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About</a>                    
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu">
+                            <li class="specific"><a href="#">Bolívar</a></li>
+                            <li class="specific"><a href="#">Córdoba</a></li>
+                            <li class="specific"><a href="#">Sucre</a></li>
+                            <li class="specific"><a href="#">San Andrés y Providencia</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToContact">
+                           Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redirectToLogOut">
+                           Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
+    <div class="dashboard-container">
+        <div class="dashboard-sidebar">
+            <div class="dashboard-menu">
+                <ul>
+                    <li class="active"><a href="#overview" data-section="overview">Dashboard</a></li>
+                    <li><a href="#profile" data-section="profile">Business Profile</a></li>
+                    <li><a href="#services" data-section="services">Services</a></li>
+                    <li><a href="#photos" data-section="photos">Photos</a></li>
+                    <li><a href="#events" data-section="events">Events</a></li>
+                    <li><a href="#analytics" data-section="analytics">Analytics</a></li>
+                    <li><a href="#settings" data-section="settings">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dashboard-content">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <h1>Enterprise Dashboard</h1>
+                <div class="dashboard-welcome">
+                    <div class="welcome-message">
+                        <h2>Welcome, <span id="business-name">Business Name</span></h2>
+                        <p>This is your enterprise dashboard where you can manage your business profile and services.</p>
+                    </div>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <h3>Profile Views</h3>
+                            <p class="stat-number">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Services</h3>
+                            <p class="stat-number">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Events</h3>
+                            <p class="stat-number">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" data-action="add-service">
+                            <span class="material-symbols-outlined">add_business</span>
+                            Add Service
+                        </button>
+                        <button class="action-btn" data-action="add-event">
+                            <span class="material-symbols-outlined">event</span>
+                            Create Event
+                        </button>
+                        <button class="action-btn" data-action="upload-photos">
+                            <span class="material-symbols-outlined">add_photo_alternate</span>
+                            Upload Photos
+                        </button>
+                        <button class="action-btn" data-action="edit-profile">
+                            <span class="material-symbols-outlined">edit</span>
+                            Edit Profile
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Profile Section -->
+            <section id="profile" class="dashboard-section">
+                <h1>Business Profile</h1>
+                <div class="profile-container">
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" name="businessName" placeholder="Your business name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ownerName">Owner Name</label>
+                            <input type="text" id="ownerName" name="ownerName" placeholder="Owner's full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessPhone">Business Phone</label>
+                            <input type="text" id="businessPhone" name="businessPhone" placeholder="Business phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessEmail">Business Email</label>
+                            <input type="email" id="businessEmail" name="businessEmail" placeholder="Business email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <input type="text" id="businessAddress" name="businessAddress" placeholder="Full address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessDescription">Business Description</label>
+                            <textarea id="businessDescription" name="businessDescription" rows="5" placeholder="Describe your business..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessCategory">Business Category</label>
+                            <select id="businessCategory" name="businessCategory">
+                                <option value="">Select a category</option>
+                                <option value="accommodation">Accommodation and Hospitality</option>
+                                <option value="tours">Agencies and Tour Operators</option>
+                                <option value="culture">Cultural and Heritage Tourism</option>
+                                <option value="marketing">Digital Marketing and Support Services</option>
+                                <option value="ecotourism">Ecotourism and Nature Tourism</option>
+                                <option value="events">Events and Conventions</option>
+                                <option value="crafts">Handicrafts and Souvenirs Trade</option>
+                                <option value="wellness">Medical and Wellness Tourism Services</option>
+                                <option value="food">Restaurants and Gastronomy</option>
+                                <option value="transport">Tourist Transportation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                            <button type="button" class="btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
+            <!-- Services Section -->
+            <section id="services" class="dashboard-section">
+                <h1>Services</h1>
+                <div class="services-container">
+                    <div class="services-header">
+                        <h3>Your Services</h3>
+                        <button class="btn-primary" id="add-service-btn">Add New Service</button>
+                    </div>
+                    
+                    <div class="services-list">
+                        <p class="no-items-message">You haven't added any services yet.</p>
+                        <!-- Services will be dynamically loaded here -->
+                    </div>
+                    
+                    <!-- Add Service Form (initially hidden) -->
+                    <div class="add-service-form" style="display: none;">
+                        <h3>Add New Service</h3>
+                        <form id="service-form">
+                            <div class="form-group">
+                                <label for="serviceName">Service Name</label>
+                                <input type="text" id="serviceName" name="serviceName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="serviceDescription">Description</label>
+                                <textarea id="serviceDescription" name="serviceDescription" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="servicePrice">Price (USD)</label>
+                                <input type="number" id="servicePrice" name="servicePrice" min="0" step="0.01">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="serviceCategory">Category</label>
+                                <select id="serviceCategory" name="serviceCategory" required>
+                                    <option value="">Select a category</option>
+                                    <option value="accommodation">Accommodation</option>
+                                    <option value="transport">Transportation</option>
+                                    <option value="tour">Tours & Activities</option>
+                                    <option value="food">Food & Drinks</option>
+                                    <option value="wellness">Wellness & Spa</option>
+                                    <option value="event">Events</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Save Service</button>
+                                <button type="button" class="btn-secondary" id="cancel-service-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Photos Section -->
+            <section id="photos" class="dashboard-section">
+                <h1>Photos</h1>
+                <div class="photos-container">
+                    <div class="photos-header">
+                        <h3>Business Photos</h3>
+                        <button class="btn-primary" id="upload-photos-btn">Upload Photos</button>
+                    </div>
+                    
+                    <div class="photos-gallery">
+                        <p class="no-items-message">You haven't uploaded any photos yet.</p>
+                        <!-- Photos will be dynamically loaded here -->
+                    </div>
+                    
+                    <!-- Photo upload form (initially hidden) -->
+                    <div class="upload-photo-form" style="display: none;">
+                        <h3>Upload Photos</h3>
+                        <form id="photo-upload-form">
+                            <div class="form-group">
+                                <label for="photoTitle">Photo Title</label>
+                                <input type="text" id="photoTitle" name="photoTitle">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="photoDescription">Description</label>
+                                <textarea id="photoDescription" name="photoDescription" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="photoFile">Select Photos</label>
+                                <input type="file" id="photoFile" name="photoFile" accept="image/*" multiple>
+                            </div>
+                            
+                            <div class="preview-container">
+                                <!-- Preview will be shown here -->
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Upload Photos</button>
+                                <button type="button" class="btn-secondary" id="cancel-upload-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Events Section -->
+            <section id="events" class="dashboard-section">
+                <h1>Events</h1>
+                <div class="events-container">
+                    <div class="events-header">
+                        <h3>Your Events</h3>
+                        <button class="btn-primary" id="add-event-btn">Create New Event</button>
+                    </div>
+                    
+                    <div class="events-list">
+                        <p class="no-items-message">You haven't created any events yet.</p>
+                        <!-- Events will be dynamically loaded here -->
+                    </div>
+                    
+                    <!-- Add Event Form (initially hidden) -->
+                    <div class="add-event-form" style="display: none;">
+                        <h3>Create New Event</h3>
+                        <form id="event-form">
+                            <div class="form-group">
+                                <label for="eventName">Event Name</label>
+                                <input type="text" id="eventName" name="eventName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventDescription">Description</label>
+                                <textarea id="eventDescription" name="eventDescription" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="eventStartDate">Start Date</label>
+                                    <input type="date" id="eventStartDate" name="eventStartDate" required>
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="eventStartTime">Start Time</label>
+                                    <input type="time" id="eventStartTime" name="eventStartTime" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="eventEndDate">End Date</label>
+                                    <input type="date" id="eventEndDate" name="eventEndDate" required>
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="eventEndTime">End Time</label>
+                                    <input type="time" id="eventEndTime" name="eventEndTime" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventLocation">Location</label>
+                                <input type="text" id="eventLocation" name="eventLocation" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventPrice">Price (USD, leave empty if free)</label>
+                                <input type="number" id="eventPrice" name="eventPrice" min="0" step="0.01">
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Save Event</button>
+                                <button type="button" class="btn-secondary" id="cancel-event-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Analytics Section -->
+            <section id="analytics" class="dashboard-section">
+                <h1>Analytics</h1>
+                <p>This feature is coming soon. You'll be able to see statistics about your business profile.</p>
+            </section>
+            
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <h1>Settings</h1>
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>Account Settings</h3>
+                        <form id="account-settings-form">
+                            <div class="form-group">
+                                <label for="settingsEmail">Email</label>
+                                <input type="email" id="settingsEmail" name="settingsEmail" disabled>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="changePassword">Password</label>
+                                <button type="button" id="changePassword" class="btn-secondary">Change Password</button>
+                            </div>
+                            
+                            <div class="password-change-form" style="display: none;">
+                                <div class="form-group">
+                                    <label for="currentPassword">Current Password</label>
+                                    <input type="password" id="currentPassword" name="currentPassword">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" name="newPassword">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm New Password</label>
+                                    <input type="password" id="confirmPassword" name="confirmPassword">
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" id="savePasswordBtn" class="btn-primary">Update Password</button>
+                                    <button type="button" id="cancelPasswordBtn" class="btn-secondary">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>Notification Settings</h3>
+                        <form id="notification-settings-form">
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="emailNotifications" name="emailNotifications" checked>
+                                <label for="emailNotifications">Email Notifications</label>
+                            </div>
+                            
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="bookingNotifications" name="bookingNotifications" checked>
+                                <label for="bookingNotifications">Booking Notifications</label>
+                            </div>
+                            
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="messageNotifications" name="messageNotifications" checked>
+                                <label for="messageNotifications">Message Notifications</label>
+                            </div>
+                            
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="marketingEmails" name="marketingEmails" checked>
+                                <label for="marketingEmails">Marketing Emails</label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Save Notification Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="javascript/traducciones.js" type="module"></script>
+</body>
+</html>
