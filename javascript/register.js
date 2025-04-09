@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Verificar que Firebase Auth esté disponible
     if (!window.firebaseAuth) {
         console.error("Firebase Auth no está disponible. Verifica que firebase-auth.js esté cargado correctamente.");
-        showMessage("Error: El sistema de autenticación no está disponible", "error");
+        showAlert("Error: El sistema de autenticación no está disponible", "error");
         return;
     }
     
@@ -32,22 +32,22 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Validaciones básicas
         if (!name || !email || !phone || !password || !confirmEmail || !confirmPassword) {
-            showMessage("Por favor, completa todos los campos", "error");
+            showAlert("Por favor, completa todos los campos", "error");
             return;
         }
         
         if (email !== confirmEmail) {
-            showMessage("Los correos electrónicos no coinciden", "error");
+            showAlert("Los correos electrónicos no coinciden", "error");
             return;
         }
         
         if (password !== confirmPassword) {
-            showMessage("Las contraseñas no coinciden", "error");
+            showAlert("Las contraseñas no coinciden", "error");
             return;
         }
         
         if (password.length < 6) {
-            showMessage("La contraseña debe tener al menos 6 caracteres", "error");
+            showAlert("La contraseña debe tener al menos 6 caracteres", "error");
             return;
         }
         
@@ -58,15 +58,17 @@ document.addEventListener("DOMContentLoaded", function() {
         window.firebaseAuth.registerUser(email, password, name, phone)
             .then(user => {
                 console.log("Registro exitoso:", user);
-                showMessage("¡Registro exitoso! Redirigiendo al inicio de sesión...", "success");
+                
+                // Mostrar mensaje de éxito con estilo
+                showAlert("¡Registro exitoso! Redirigiendo al inicio de sesión...", "success");
                 
                 // Limpiar formulario
                 registerForm.reset();
                 
-                // Redirigir a la página de inicio de sesión
+                // Redirigir a la página de inicio de sesión después de un delay para que el usuario vea el mensaje
                 setTimeout(() => {
                     window.location.href = "login.html";
-                }, 2000);
+                }, 3000);
             })
             .catch(error => {
                 console.error("Error al registrar usuario:", error);
@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         errorMessage += error.message;
                 }
                 
-                showMessage(errorMessage, "error");
+                showAlert(errorMessage, "error");
             })
             .finally(() => {
                 showLoading(false);
@@ -105,16 +107,16 @@ document.addEventListener("DOMContentLoaded", function() {
             window.firebaseAuth.signInWithGoogle()
                 .then(user => {
                     console.log("Inicio de sesión con Google exitoso:", user);
-                    showMessage("¡Inicio de sesión con Google exitoso! Redirigiendo...", "success");
+                    showAlert("¡Inicio de sesión con Google exitoso! Redirigiendo...", "success");
                     
-                    // Redirigir a la página principal
+                    // Redirigir a la página principal después de un delay
                     setTimeout(() => {
                         window.location.href = "index.html";
-                    }, 2000);
+                    }, 3000);
                 })
                 .catch(error => {
                     console.error("Error al iniciar sesión con Google:", error);
-                    showMessage("Error al iniciar sesión con Google: " + error.message, "error");
+                    showAlert("Error al iniciar sesión con Google: " + error.message, "error");
                 })
                 .finally(() => {
                     showLoading(false);
@@ -123,31 +125,81 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Función para mostrar mensajes al usuario
-function showMessage(message, type) {
-    let messageContainer = document.querySelector(".message-container");
-    
-    if (!messageContainer) {
-        messageContainer = document.createElement("div");
-        messageContainer.className = "message-container";
-        document.getElementById("register-card").insertAdjacentElement("beforebegin", messageContainer);
+// Función para mostrar alertas estéticas
+function showAlert(message, type) {
+    // Crear el contenedor de alertas si no existe
+    let alertContainer = document.querySelector(".alert-container");
+    if (!alertContainer) {
+        alertContainer = document.createElement("div");
+        alertContainer.className = "alert-container";
+        document.body.appendChild(alertContainer);
     }
     
-    const messageElement = document.createElement("div");
-    messageElement.className = `message ${type}`;
-    messageElement.textContent = message;
+    // Crear la alerta
+    const alert = document.createElement("div");
+    alert.className = `alert alert-${type}`;
     
-    // Limpiar mensajes previos
-    messageContainer.innerHTML = "";
-    messageContainer.appendChild(messageElement);
+    // Definir el icono según el tipo de alerta
+    let icon;
+    switch (type) {
+        case 'success':
+            icon = '✓';
+            break;
+        case 'error':
+            icon = '✗';
+            break;
+        case 'warning':
+            icon = '⚠';
+            break;
+        case 'info':
+            icon = 'ℹ';
+            break;
+        default:
+            icon = 'ℹ';
+    }
     
-    // Eliminar mensaje después de un tiempo
-    setTimeout(() => {
-        messageElement.remove();
-        if (messageContainer.children.length === 0) {
-            messageContainer.remove();
-        }
-    }, 5000);
+    // Crear la estructura interna de la alerta
+    alert.innerHTML = `
+        <span class="alert-icon">${icon}</span>
+        <div class="alert-content">${message}</div>
+        <button class="alert-close">&times;</button>
+    `;
+    
+    // Añadir evento al botón de cerrar
+    const closeButton = alert.querySelector(".alert-close");
+    closeButton.addEventListener("click", function() {
+        alert.classList.add("fade-out");
+        setTimeout(() => {
+            alert.remove();
+            
+            // Eliminar el contenedor si está vacío
+            if (alertContainer.children.length === 0) {
+                alertContainer.remove();
+            }
+        }, 500);
+    });
+    
+    // Añadir alerta al contenedor
+    alertContainer.appendChild(alert);
+    
+    // Eliminar automáticamente después de un tiempo (solo para tipo success)
+    if (type === 'success') {
+        setTimeout(() => {
+            if (alert && alert.parentNode) {
+                alert.classList.add("fade-out");
+                setTimeout(() => {
+                    if (alert && alert.parentNode) {
+                        alert.remove();
+                        
+                        // Eliminar el contenedor si está vacío
+                        if (alertContainer.children.length === 0) {
+                            alertContainer.remove();
+                        }
+                    }
+                }, 500);
+            }
+        }, 5000); // 5 segundos antes de desaparecer
+    }
 }
 
 // Función para mostrar/ocultar indicador de carga
