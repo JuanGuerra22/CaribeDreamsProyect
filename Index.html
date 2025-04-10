@@ -76,7 +76,11 @@
                         </a>
                     </li>
                     <li>
+<<<<<<< Updated upstream
                         <a href="register.html" class="redirectToRegister">
+=======
+                        <a href="select-register.html" data-i18n="registro" class="edirrectToLogOut hidden"  >
+>>>>>>> Stashed changes
                            Register
                         </a>
                     </li>
@@ -118,20 +122,20 @@
                         </select>
                     </div>
                     <div class="ciudad">
-                        <label for="ciudad" data-i18n="select-ciudad">Select your city:</label>
-                        <select name="ciudad" id="ciudad">
+                        <label for="departamento" data-i18n="select-ciudad">Select your Department:</label>
+                        <select name="departamento" id="departamento">
                             <option value=""></option>
                             <option value="san-andres">San Andrés y Providencia</option>
-                            <option value="cartagena">Cartagena</option>
-                            <option value="monteria">Montería</option>
-                            <option value="sincelejo">Sincelejo</option>
+                            <option value="bolivar">Bolivar</option>
+                            <option value="cordoba">Córdoba</option>
+                            <option value="sucre">Sucre</option>
                         </select>
                     </div>
                     <div class="servicios">
                         <label for="servicios" data-i18n="select-servicios">Choose your desired services</label>
                         <select name="servicios" id="servicios">
                             <option value=""></option>
-                            <option value="">Accommodation and Hospitality</option>
+                            <option value="hoteles">Accommodation and Hospitality</option>
                             <option value="">Agencies and Tour Operators</option>
                             <option value="">Cultural and Heritage Tourism</option>
                             <option value="">Digital Marketing and Support Services</option>
@@ -147,7 +151,7 @@
                         </select>
                     </div>
                     <div class="btn-search-bar">
-                        <button type="button" data-i18n="btn-buscar">Search</button>
+                        <button type="button" data-i18n="btn-buscar" id="btn-search-bar">Search</button>
                     </div>
                 </form>
             </div>
@@ -155,7 +159,7 @@
 </div>
 
 <section class="cont-img-city">
-    <h2 class="hidden" id="title-monteria"> Montería "La parla del Sinú"</h2>
+    <h2 class="hidden" id="title-monteria"> Córdoba - Montería "La parla del Sinú"</h2>
     <div class="cont-ciudades" id="cont-monteria">
         <div class="img-monteria">
             <div class="card"><h3>Monumento al Porro "María Varilla"</h3>
@@ -179,7 +183,8 @@
             </div>   
         </div>
     </div>
-    <h2 class="hidden" id="title-cartagena"> Cartagena "La ciudad Amurallada"</h2>
+
+    <h2 class="hidden" id="title-cartagena"> Bolivar - Cartagena "La ciudad Amurallada"</h2>
     <div class="cont-ciudades" id="cont-cartagena">
         <div class="img-monteria">
             <div class="card"><h3>Castillo de San Felipe de Barajas</h3>
@@ -229,7 +234,7 @@
         </div>
     </div>
 
-    <h2 class="hidden" id="title-sincelejo"> Sincelejo "La Capital de la Sabana" </h2>
+    <h2 class="hidden" id="title-sincelejo"> Sucre - Sincelejo "La Capital de la Sabana" </h2>
     <div class="cont-ciudades" id="cont-sincelejo">
         <div class="img-monteria">
             <div class="card"><h3>Catedral de Sincelejo</h3>
@@ -254,6 +259,33 @@
         </div>
     </div>
 </section>
+
+<section class="cont-services">
+    <h2 class="hidden" id="title-cord-hotel"> Córdoba - Accommodation and Hospitality </h2>
+    <div class="services-cont" id="cordoba-hoteles">
+        <div class="cont-cord-hotel">
+            <h3>Arcoiris Casahostal</h3>
+            <img src="assets/images/hotel-cordoba1.jpg" alt="">
+            <p><b>Descripción</b></p>
+            <p>Arcoiris Casahostal se encuentra en San Bernardo del Viento, a pocos pasos de Playas de San Bernardo del Viento, y ofrece alojamiento con piscina al aire libre, parking privado gratis, zona de playa.</p>
+        </div>
+        <div class="cont-cord-hotel">
+            <h3>Älana casa de playa</h3>
+            <img src="assets/images/hotel-cordoba2.jpg" alt="">
+            <p><b>Descripción</b></p>
+            <p>Älana casa de playa dispone de jardín, zona de playa privada, restaurante y bar en San Bernardo del Viento. Hay piscina cubierta y servicio de alquiler de bicicletas.</p>
+        </div>
+        <div class="cont-cord-hotel">
+            <h3>Hotel Cinco Monteria</h3>
+            <img src="assets/images/hotel-cordoba3.jpg" alt="">
+            <p> <b>Descripción</b></p>
+            <p>El Hotel Cinco Monteria está situado en Montería y alberga un restaurante y una terraza en la azotea con una bañera de hidromasaje.</p>
+        </div>
+    </div>
+
+</section>
+
+
 <script src="javascript/img-cities.js"></script>
 <script src="javascript/traducciones.js" type="module"></script>
 </body>

@@ -219,7 +219,8 @@ text-decoration: none;
     align-items: center;
     width: 280px;
     height: 350px;
-    background-color: #2f5d81af;
+    background-color: var(--color-card-opa);
+    /* background-color: #2f5d81af; */
     border-radius: 10px;
     padding: 10px;
 }
@@ -246,6 +247,7 @@ text-decoration: none;
 .card p{
     text-align: justify;
     font-style: italic;
+    color: #ffffff;
 }
 
 :root {
@@ -254,6 +256,7 @@ text-decoration: none;
     --golden-yellow: #F4A623;
     --white: #FFFFFF;
     --light-grey:#D9D9D9; 
+    --color-card-opa: #0a1f44bb; 
 }
 
 .background-container{
@@ -554,7 +557,6 @@ text-decoration: none;
 
 label{
     margin: 5px;
-    padding-left: 50px;
     color: var(--light-grey);
 }
 input{
@@ -869,6 +871,8 @@ html, body {
 
 
 /* ------------------------------------------ */
+
+/* Contenedor de imagenes por Departamento */
 .cont-img-city{
     display: flex;
     flex-direction: column;
@@ -879,6 +883,10 @@ html, body {
 .cont-img-city h2{
     color: #fff;
     font-size: 2.2rem;
+    background-color: var(--color-card-opa);
+    border-radius: 5px 5px 0 0;
+    padding: 7px;
+    margin-top: 10px;
 }
 .cont-ciudades{
     display: none;
@@ -893,9 +901,67 @@ html, body {
     text-align: center;
 }
 .img-monteria h3{
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .visible{
     display: flex;
+}
+/* ------------------------------------------ */
+/* Contenedor de imagenes por Servicios */
+.cont-services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;  
+}
+.cont-services h2{
+   color: #ffffff;
+   font-size: 2.2rem;
+   background-color: var(--color-card-opa);
+   border-radius: 5px 5px 0 0;
+   padding: 0 5px;
+   margin-top: 10px;
+}
+
+.services-cont{
+    display: none;
+}
+
+.services-cont.visible{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    background-color: var(--color-card-opa);
+    border-radius: 10px;
+}
+.cont-cord-hotel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 420px;
+
+}
+.cont-cord-hotel p{
+    padding: 5px 10px 0 10px;
+    text-align: justify;
+    color: #ffffff;
+}
+.cont-cord-hotel h3{
+    font-size: 1.5rem;
+}
+.cont-cord-hotel img{
+    margin-top: 10px;
+    height: 200px;
+    border-radius: 100%;
+    transition: border-radius 0.5s ease;;
+    cursor: pointer;
+}
+
+.cont-cord-hotel img:hover{
+    border-radius: 5px;
 }

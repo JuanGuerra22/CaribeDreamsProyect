@@ -1,14 +1,21 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-    <title>Creators - Caribe Dreams</title>    
-    <script src="./javascript/javascript.js" defer></script>
+    <title>Add Service - Caribe Dreams</title>
+    <script src="./javascript/register.js" defer></script>
+    <script src="javascript/javascript.js"></script>
+
 </head>
 <body>
     <div class="background-container">
@@ -64,44 +71,33 @@ x<!DOCTYPE html>
             </nav>
         </header>
     </div>
-    <section class="welcome-section">
-        <div class="card-creator">
-            <div class="welcome-container">
-                <h1 data-i18n="creadores">Creators</h1>
-                <div class="cont-creators">
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Andree Felipe Zarate Camacho</h3>
-                        <p>Programming Student 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Joaquín Antonio Muñoz Moncayo</h3>
-                        <p>Programming Student 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Carlos Daniel Ortiz Gonzalez</h3>
-                        <p>Lic. Informatica 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Juan Luis Guerra Rodríguez</h3>
-                        <p>Lic. Informatica y medios Audiovisuales 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Diego Fernando Angulo Bernal</h3>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Brayan de Jesus Fernandez Garces</h3>
-                        <p>FullStack Developer & Systems engineer 💻</p>
-                    </div>  
-                </div>         
+
+    <section class="welcome-section-register">
+        <div class="card-background-register" id="register-card">
+            <div class="cont-services">
+                <a href="Index.html"><img src="assets/images/logo.png" class="register-logo"></a>
+                <h2 data-i18n="post-services">Post your services</h2>
+                <div class="cont-form-services">
+                    <form action="" id="form-services">
+                        <label for="servicies" data-i18n="title-services">Category of the service</label>
+                        <select name="servicies" id="servicies" aria-placeholder="sdsdsdsd">
+                            <option value=""></option>
+                            <option value="hospitality" data-i18n="alojamiento">Accommodation and Hospitality</option>
+                            <option value="restaurants" data-i18n="restaurantes">Restaurants and Gastronomy</option>
+                        </select>
+                        <input type="text" name="departamento" placeholder="Department" data-i18n="[placeholder]departamento" required>
+                        <input type="text" name="city" placeholder="City" data-i18n="[placeholder]ciudad" required>
+                        <input type="text" name="descripcion" placeholder="Description of the service" data-i18n="[placeholder]servicio" required>
+                        <textarea name="" id="" cols="30" rows="5" placeholder="Remember to write days, cost, and all relevant details" data-i18n="[placeholder]textarea"></textarea>
+                        <button type="submit" id="btn-guardar-serv" data-i18n="guardar">Post</button>
+                    </form>
+                </div>
             </div>
+                
         </div>
     </section>
+
+    
     <script src="javascript/traducciones.js" type="module"></script>
 </body>
 </html>
