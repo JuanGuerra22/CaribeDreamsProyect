@@ -46,16 +46,16 @@
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#" class="redirectToIndex">Home</a>
+                        <a href="#" class="redirectToIndex" data-i18n="menu-inicio">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="redirectToCreators">Creators</a>
+                        <a href="#" class="redirectToCreators" data-i18n="menu-creadores">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">About</a>                    
+                        <a href="#" class="dropdown-toggle" data-i18n="menu-acerca-de">About</a>                    
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Destinations</a>
+                        <a href="#" class="dropdown-toggle" data-i18n="menu-destinos">Destinations</a>
                         <ul class="dropdown-menu">
                             <li class="specific"><a href="#">Bolívar</a></li>
                             <li class="specific"><a href="#">Córdoba</a></li>
@@ -63,15 +63,9 @@
                             <li class="specific"><a href="#">San Andrés y Providencia</a></li>
                         </ul>
                     </li>
-                    
-                    <li>
-                        <a href="#" class="redirectToContact">
-                           Contact
-                        </a>
-                    </li>
                     <!-- Botones de autenticación - Asegúrate de que todos los archivos tengan esta estructura -->
                     <li>
-                        <a href="login.html" class="redirectToLogIn">
+                        <a href="login.html" class="redirectToLogIn" data-i18n="menu-iniciar-sesion">
                            Login
                         </a>
                     </li>
@@ -135,11 +129,11 @@
                         <label for="servicios" data-i18n="select-servicios">Choose your desired services</label>
                         <select name="servicios" id="servicios">
                             <option value=""></option>
-                            <option value="hoteles">Accommodation and Hospitality</option>
-                            <option value="restaurante">Restaurants and Gastronomy</option>
-                            <option value="">Agencies and Tour Operators</option>
-                            <option value="">Cultural and Heritage Tourism</option>
-                            <option value="">Digital Marketing and Support Services</option>
+                            <option value="hoteles" data-i18n="hoteles">Accommodation and Hospitality</option>
+                            <option value="restaurante" data-i18n="restaurante">Restaurants and Gastronomy</option>
+                            <option value="agencias" data-i18n="agencias">Agencies and Tour Operators</option>
+                            <option value="cultura" data-i18n="cultura">Cultural and Heritage Tourism</option>
+                            <!-- <option value="">Digital Marketing and Support Services</option>
                             <option value="">Ecotourism and Nature Tourism</option>
                             <option value="">Cultural and Heritage Tourism</option>
                             <option value="">Environmental Entities and Projects</option>
@@ -147,7 +141,7 @@
                             <option value="">Cultural and Heritage Tourism</option>
                             <option value="">Handicrafts and Souvenirs Trade</option>
                             <option value="">Medical and Wellness Tourism Services</option>
-                            <option value="">Tourist Transportation</option>
+                            <option value="">Tourist Transportation</option> -->
                         </select>
                     </div>
                     <div class="btn-search-bar">
@@ -289,22 +283,35 @@
         <h2> Córdoba - Restaurants and Gastronomy </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Restaurante 1 </h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Baalbeck</h3>
+                <img src="assets/images/cordoba/restaurante1.jpg" alt="">
                 <p><b>Descripción</b></p>
-                <p>Restaurante de Cordoba</p>
+                <ul>
+                    <li>Apto para vegetarianos, opciones veganas, opciones sin gluten</li>
+                    <li>Almuerzo, Cena, Bebidas</li>
+                    <li>Comida para llevar, Servicio de mesa</li>
+                </ul>
+                
             </div>
             <div class="cont-services-info">
-                <h3>Restaurante 1</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Occa</h3>
+                <img src="assets/images/cordoba/restaurante2.jpg" alt="">
                 <p><b>Descripción</b></p>
-                <p>Restaurante de Cordoba</p>
+                <ul>
+                    <li>Pagos digitales, Acepta tarjetas de crédito: Mastercard, Visa</li>
+                    <li>Almuerzo, Cena</li>
+                    <li>Comida para llevar, Estilo familiar, Servicio de mesa</li>
+                </ul>
             </div>
             <div class="cont-services-info">
-                <h3>Restaurante 1</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>De la casa</h3>
+                <img src="assets/images/cordoba/restaurante3.jpg" alt="">
                 <p> <b>Descripción</b></p>
-                <p>Restaurante de Cordoba</p>
+                <ul>
+                    <li>Pagos digitales, Acepta tarjetas de crédito: Mastercard, Visa</li>
+                    <li>Almuerzo, Cena</li>
+                    <li>Servicio de mesa</li>
+                </ul>
             </div>
         </div>
     </div>
