@@ -917,27 +917,31 @@ html, body {
     width: 100%;  
 }
 .cont-services h2{
-   color: #ffffff;
-   font-size: 2.2rem;
-   background-color: var(--color-card-opa);
-   border-radius: 5px 5px 0 0;
-   padding: 0 5px;
-   margin-top: 10px;
+    display: flex;
+    color: #ffffff;
+    font-size: 2.2rem;
+    border-radius: 5px 5px 0 0;
+    padding: 0 5px;
+    margin-top: 10px;
 }
 
-.services-cont{
+.services-department{
     display: none;
 }
 
-.services-cont.visible{
+.services-department.visible{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 80%;
     background-color: var(--color-card-opa);
     border-radius: 10px;
 }
-.cont-cord-hotel{
+.div-colum{
+    display: flex;
+}
+.cont-services-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -946,15 +950,15 @@ html, body {
     height: 420px;
 
 }
-.cont-cord-hotel p{
+.cont-services-info p{
     padding: 5px 10px 0 10px;
     text-align: justify;
     color: #ffffff;
 }
-.cont-cord-hotel h3{
+.cont-services-info h3{
     font-size: 1.5rem;
 }
-.cont-cord-hotel img{
+.cont-services-info img{
     margin-top: 10px;
     height: 200px;
     border-radius: 100%;
@@ -962,6 +966,29 @@ html, body {
     cursor: pointer;
 }
 
-.cont-cord-hotel img:hover{
+.cont-services-info img:hover{
     border-radius: 5px;
+}
+/* --------------------------------------------- */
+/* pagina en construccion  */
+#cont-en-construccion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#cont-en-construccion span{
+    font-size: 5rem;
+}
+.img-enconstruccion{
+    width: 150px;
+}
+.div-contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 220px;
 }
