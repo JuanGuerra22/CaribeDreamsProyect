@@ -53,7 +53,7 @@
                         <a href="#" class="redirectToCreators" data-i18n="menu-creadores">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-i18n="menu-acerca-de">About</a>                    
+                        <a href="#" class="redirectToAbout" data-i18n="menu-acerca-de">About</a>                    
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-i18n="menu-destinos">Destinations</a>
@@ -81,8 +81,8 @@
                         </a>
                     </li>
                     <li>
-                        <button id="btn-english">English</button>
-                        <button id="btn-spanish">Español</button>
+                        <button class="btn-idiomas" id="btn-english">English</button>
+                        <button class="btn-idiomas" id="btn-spanish">Español</button>
                     </li>
                     <!-- Fin de botones de autenticación -->
                 </ul>
@@ -97,18 +97,12 @@
             </div>
         </section>
         <section class="botones-principal">
-            <div class="cont-btn-services">
-                <a href="#" class="btn-services" data-i18n="servicios">Services</a>
-            </div>
-            <div class="cont-btn-latest">
-                <a href="#" class="btn-latest" data-i18n="publicaciones">Latest posts</a>
-            </div>
-            <div class="cont-btn-event">
-                <a href="#" class="btn-event" data-i18n="eventos">Event Board</a>
-            </div>
+                <button class="btn-search-bar" id="services-btn"  data-i18n="servicios">Services</button>
+                <button class="btn-search-bar" id="posts-btn" data-i18n="publicaciones">Latest posts</button>
+                <button class="btn-search-bar" id="events-btn" data-i18n="eventos">Event Board</button>
         </section>
         <section class="search-bar">
-            <div class="tab-select">
+            <div class="section-services visible" id="search-bar-services">
                 <form action="" id="form-principal">
                     <div class="region">
                         <label for="region" data-i18n="select-regiones">Select your region:</label>
@@ -120,9 +114,9 @@
                         <label for="departamento" data-i18n="select-ciudad">Select your Department:</label>
                         <select name="departamento" id="departamento">
                             <option value=""></option>
-                            <option value="san-andres">San Andrés y Providencia</option>
                             <option value="bolivar">Bolivar</option>
                             <option value="cordoba">Córdoba</option>
+                            <option value="san-andres">San Andrés y Providencia</option>
                             <option value="sucre">Sucre</option>
                         </select>
                     </div>
@@ -130,16 +124,14 @@
                         <label for="servicios" data-i18n="select-servicios">Choose your desired services</label>
                         <select name="servicios" id="servicios">
                             <option value=""></option>
+                            <option value="cultura" data-i18n="cultura">Cultural and Heritage Tourism</option>
                             <option value="hoteles" data-i18n="hoteles">Accommodation and Hospitality</option>
                             <option value="restaurante" data-i18n="restaurante">Restaurants and Gastronomy</option>
                             <option value="agencias" data-i18n="agencias">Agencies and Tour Operators</option>
-                            <option value="cultura" data-i18n="cultura">Cultural and Heritage Tourism</option>
                             <!-- <option value="">Digital Marketing and Support Services</option>
                             <option value="">Ecotourism and Nature Tourism</option>
-                            <option value="">Cultural and Heritage Tourism</option>
                             <option value="">Environmental Entities and Projects</option>
                             <option value="">Events and Conventions</option>
-                            <option value="">Cultural and Heritage Tourism</option>
                             <option value="">Handicrafts and Souvenirs Trade</option>
                             <option value="">Medical and Wellness Tourism Services</option>
                             <option value="">Tourist Transportation</option> -->
@@ -150,110 +142,23 @@
                     </div>
                 </form>
             </div>
-        </section>          
-</div>
+            <div class="section-posts" id="search-bar-posts">
+                <p data-i18n="ms-posts">There are no publications available yet </p>
+            </div>
+            <div class="section-eventos" id="search-bar-events">
+                <div class="botones-eventos">
+                    <button class="btn-event">Bolivar</button>
+                    <button class="btn-event">Córdoba</button>
+                    <button class="btn-event">San Ándres y Providencia</button>
+                    <button class="btn-event">Sucre</button>
+                </div>
+            </div>    
+        </section>   
 
-<section class="cont-img-city">
-    <h2 class="hidden" id="title-monteria"> Córdoba - Montería "La parla del Sinú"</h2>
-    <div class="cont-ciudades" id="cont-monteria">
-        <div class="img-monteria">
-            <div class="card"><h3>Monumento al Porro "María Varilla"</h3>
-                <img src="assets/images/monteria1.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Este monumento honra la memoria de la canción "María Varilla", uno de los porros más representativos de la región, compuesto por el músico y compositor José Barros en 1935. </p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Muelle Turistico de Montería</h3>
-                <img src="assets/images/monteria2.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Este muelle se encuentra sobre el río Sinú, un importante afluente de la región, y es un punto de encuentro para los visitantes que buscan disfrutar de paisajes naturales y actividades acuáticas.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Parque Simón Bolivar - Catedral </h3>
-                <img src="assets/images/monteria3.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Es uno de los principales parques de la ciudad. Está ubicado en el centro de Montería y es un lugar de recreación popular tanto para locales como para turistas.</p>
-            </div>   
-        </div>
+        
     </div>
 
-    <h2 class="hidden" id="title-cartagena"> Bolivar - Cartagena "La ciudad Amurallada"</h2>
-    <div class="cont-ciudades" id="cont-cartagena">
-        <div class="img-monteria">
-            <div class="card"><h3>Castillo de San Felipe de Barajas</h3>
-                <img src="assets/images/cartagena1.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>El Castillo de San Felipe fue construido en este lugar estratégico con el fin de observar las invasiones de piratas en la ciudad por tierra o por la Bahía de Cartagena. </p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Ciudad Amurallada</h3>
-                <img src="assets/images/cartagena2.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Se trata de una zona histórica dentro de la ciudad de Cartagena de Indias, que está rodeada por una impresionante muralla construida entre los siglos XVI y XVIII para proteger la ciudad de ataques de piratas y colonizadores enemigos.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Parque Simón Bolivar - Catedral </h3>
-                <img src="assets/images/cartagena3.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Se encuentra ubicada en la entrada principal de la ciudad amurallada, en la Plaza de los Coches, que es uno de los puntos más visitados por turistas.</p>
-            </div>   
-        </div>
-    </div>
 
-    <h2 class="hidden" id="title-san-andres"> San Andrés y Povidencia "Mar de los siete colores" </h2>
-    <div class="cont-ciudades" id="cont-san-andres">
-        <div class="img-monteria">
-            <div class="card"><h3>Johnny Cay</h3>
-                <img src="assets/images/isla1.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Una isla pequeña cerca de la isla principal, famosa por su arena blanca, aguas turquesas y ambiente relajado. Es ideal para disfrutar de un día de sol y mar.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Cayo Rocoso</h3>
-                <img src="assets/images/isla2.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Es un cayo pequeño con playas impresionantes y una gran biodiversidad marina, ideal para hacer snorkel.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Cueva de Morgan </h3>
-                <img src="assets/images/isla3.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Es una cueva legendaria donde se dice que el pirata Henry Morgan escondía su tesoro, es un lugar fascinante con historia y misterio.</p>
-            </div>   
-        </div>
-    </div>
-
-    <h2 class="hidden" id="title-sincelejo"> Sucre - Sincelejo "La Capital de la Sabana" </h2>
-    <div class="cont-ciudades" id="cont-sincelejo">
-        <div class="img-monteria">
-            <div class="card"><h3>Catedral de Sincelejo</h3>
-                <img src="assets/images/sincelejo1.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>La Catedral de Sincelejo, conocida oficialmente como la Catedral de la Santa María del Dulce Nombre de Jesús, es el principal templo religioso de la ciudad de Sincelejo, en el departamento de Sucre, Colombia.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Plaza de Majagual</h3>
-                <img src="assets/images/sincelejo2.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Es el corazón de la ciudad y un excelente lugar para disfrutar de la vida local. Aquí se realizan eventos culturales y es el sitio ideal para pasear y disfrutar de la arquitectura tradicional.</p>
-            </div>   
-        </div>
-        <div class="img-monteria">
-            <div class="card"><h3>Museo Manuel Huertas</h3>
-                <img src="assets/images/sincelejo3.jpg" alt="">
-                <p> <b> Description </b></p>
-                <p>Es uno de los más completos del país por reunir expresiones culturales representadas en figuras arqueológicas de varias etnias que habitaron esta región. </p>
-            </div>   
-        </div>
-    </div>
-</section>
 
 <section class="cont-services" id="cont-services">
     <!-- Servicios de Córdoba -->
@@ -316,27 +221,50 @@
             </div>
         </div>
     </div>
+    <div class="services-department" id="cordoba-cultura">
+        <h2> Córdoba - Montería "La parla del Sinú"</h2>
+        <div class="div-colum">
+            <div class="cont-services-info">
+                    <h3>Monumento al Porro "María Varilla"</h3>
+                    <img src="assets/images/cordoba/cultura1.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Este monumento honra la memoria de la canción "María Varilla", uno de los porros más representativos de la región, compuesto por el músico y compositor José Barros en 1935. </p> 
+            </div>
+            <div class="cont-services-info">
+                    <h3>Muelle Turistico de Montería</h3>
+                    <img src="assets/images/cordoba/cultura2.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Este muelle se encuentra sobre el río Sinú, un importante afluente de la región, y es un punto de encuentro para los visitantes que buscan disfrutar de paisajes naturales y actividades acuáticas.</p>  
+            </div>
+            <div class="cont-services-info">
+                    <h3>Parque Simón Bolivar - Catedral </h3>
+                    <img src="assets/images/cordoba/cultura3.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Es uno de los principales parques de la ciudad. Está ubicado en el centro de Montería y es un lugar de recreación popular tanto para locales como para turistas.</p>  
+            </div>
+        </div>
+    </div>
     <!-- Servicios de Bolivar -->
     <div class="services-department" id="bolivar-hoteles">
         <h2> Bolivar - Accommodation and Hospitality </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Las Américas Casa de Playa</h3>
+                <img src="assets/images/bolivar/hotel1.jpg" alt="">
                 <p><b>Descripción</b></p>
-                <p>informacion de la Descripción</p>
+                <p>El Hotel Las Américas Casa de Playa es un complejo tropical situado frente al Mar Caribe en el norte de Cartagena de Indias. </p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Hotel Isla Múcura</h3>
+                <img src="assets/images/bolivar/hotel2.jpg" alt="">
                 <p><b>Descripción</b></p>
-                <p>informacion de la Descripción</p>
+                <p>El Hotel Isla Múcura es un encantador alojamiento frente a la playa ubicado en Isla Múcura, un paraíso tropical en el Caribe colombiano.</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Hyatt Regency Cartagena</h3>
+                <img src="assets/images/bolivar/hotel3.jpg" alt="">
                 <p> <b>Descripción</b></p>
-                <p>informacion de la Descripción</p>
+                <p>Hyatt Regency Cartagena es un hotel romántico con televisor de pantalla plana, minibar y aire acondicionado en las habitaciones</p>
             </div>
         </div>
     </div>
@@ -344,22 +272,45 @@
         <h2> Bolivar - Restaurants and Gastronomy </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>La Santa Guadalupe Centro Histórico</h3>
+                <img src="assets/images/bolivar/restaurante1.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Restaurante Candé</h3>
+                <img src="assets/images/bolivar/restaurante2.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>7 Cielos Rooftop</h3>
+                <img src="assets/images/bolivar/restaurante3.jpg" alt="">
                 <p> <b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
+            </div>
+        </div>
+    </div>
+    <div class="services-department" id="bolivar-cultura">
+        <h2> Bolivar - Cartagena "La ciudad Amurallada"</h2>
+        <div class="div-colum">
+            <div class="cont-services-info">
+                    <h3>Castillo de San Felipe de Barajas</h3>
+                    <img src="assets/images/cartagena1.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>El Castillo de San Felipe fue construido en este lugar estratégico con el fin de observar las invasiones de piratas en la ciudad por tierra o por la Bahía de Cartagena. </p>  
+            </div>
+            <div class="cont-services-info">
+                    <h3>Ciudad Amurallada</h3>
+                    <img src="assets/images/cartagena2.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Se trata de una zona histórica dentro de la ciudad de Cartagena de Indias, que está rodeada por una impresionante muralla construida entre los siglos XVI y XVIII para proteger la ciudad de ataques de piratas y colonizadores enemigos.</p>  
+            </div>
+            <div class="cont-services-info">
+                    <h3>Parque Simón Bolivar - Catedral </h3>
+                    <img src="assets/images/cartagena3.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Se encuentra ubicada en la entrada principal de la ciudad amurallada, en la Plaza de los Coches, que es uno de los puntos más visitados por turistas.</p> 
             </div>
         </div>
     </div>
@@ -368,20 +319,20 @@
         <h2> Sucre - Accommodation and Hospitality </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Hotel Isla Palma</h3>
+                <img src="assets/images/sucre/hotel1.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Hotel PortoAlegre Covenas</h3>
+                <img src="assets/images/sucre/hotel2.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Hotel Poblado </h3>
+                <img src="assets/images/sucre/hotel3.jpg" alt="">
                 <p> <b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
@@ -391,22 +342,45 @@
         <h2> Sucre - Restaurants and Gastronomy </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Itamburi Restaurante Bar</h3>
+                <img src="assets/images/sucre/restaurante1.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Che Restaurante</h3>
+                <img src="assets/images/sucre/restaurante2.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>El Parguito Feliz</h3>
+                <img src="assets/images/sucre/restaurante3.jpg" alt="">
                 <p> <b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
+            </div>
+        </div>
+    </div>
+    <div class="services-department" id="sucre-cultura">
+        <h2> Sucre - Sincelejo "La Capital de la Sabana" </h2>
+        <div class="div-colum" >
+            <div class="cont-services-info">
+                    <h3>Catedral de Sincelejo</h3>
+                    <img src="assets/images/sincelejo1.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>La Catedral de Sincelejo, conocida oficialmente como la Catedral de la Santa María del Dulce Nombre de Jesús, es el principal templo religioso de la ciudad de Sincelejo, en el departamento de Sucre, Colombia.</p> 
+            </div>
+            <div class="cont-services-info">
+                    <h3>Plaza de Majagual</h3>
+                    <img src="assets/images/sincelejo2.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Es el corazón de la ciudad y un excelente lugar para disfrutar de la vida local. Aquí se realizan eventos culturales y es el sitio ideal para pasear y disfrutar de la arquitectura tradicional.</p> 
+            </div>
+            <div class="cont-services-info">
+                    <h3>Museo Manuel Huertas</h3>
+                    <img src="assets/images/sincelejo3.jpg" alt="">
+                    <p> <b> Description </b></p>
+                    <p>Es uno de los más completos del país por reunir expresiones culturales representadas en figuras arqueológicas de varias etnias que habitaron esta región. </p>  
             </div>
         </div>
     </div>
@@ -415,20 +389,20 @@
         <h2> San Ándres y Providencia - Accommodation and Hospitality </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Aquamare Hotel</h3>
+                <img src="assets/images/san-andres/hotel1.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Grand Sirenis San Andrés</h3>
+                <img src="assets/images/san-andres/hotel2.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Sea Avenue Hotel</h3>
+                <img src="assets/images/san-andres/hotel3.jpg" alt="">
                 <p> <b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
@@ -438,24 +412,47 @@
         <h2> San Ándres y Providencia - Restaurants and Gastronomy </h2>
         <div class="div-colum">
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Capitan Mandy</h3>
+                <img src="assets/images/san-andres/restaurante1.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Restaurante La Regatta</h3>
+                <img src="assets/images/san-andres/restaurante2.jpg" alt="">
                 <p><b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
             <div class="cont-services-info">
-                <h3>Nombre del lugar</h3>
-                <img src="assets/images/default.jpg" alt="">
+                <h3>Restaurante Casablanca</h3>
+                <img src="assets/images/san-andres/restaurante3.jpg" alt="">
                 <p> <b>Descripción</b></p>
                 <p>informacion de la Descripción</p>
             </div>
         </div>
+    </div>
+    <div class="services-department" id="san-andres-cultura">
+        <h2> San Andrés y Povidencia "Mar de los siete colores" </h2>
+    <div class="div-colum">
+        <div class="cont-services-info">
+                <h3>Johnny Cay</h3>
+                <img src="assets/images/isla1.jpg" alt="">
+                <p> <b> Description </b></p>
+                <p>Una isla pequeña cerca de la isla principal, famosa por su arena blanca, aguas turquesas y ambiente relajado. Es ideal para disfrutar de un día de sol y mar.</p> 
+        </div>
+        <div class="cont-services-info">
+                <h3>Cayo Rocoso</h3>
+                <img src="assets/images/isla2.jpg" alt="">
+                <p> <b> Description </b></p>
+                <p>Es un cayo pequeño con playas impresionantes y una gran biodiversidad marina, ideal para hacer snorkel.</p>
+        </div>
+        <div class="cont-services-info">
+                <h3>Cueva de Morgan </h3>
+                <img src="assets/images/isla3.jpg" alt="">
+                <p> <b> Description </b></p>
+                <p>Es una cueva legendaria donde se dice que el pirata Henry Morgan escondía su tesoro, es un lugar fascinante con historia y misterio.</p>  
+        </div>
+    </div>
     </div>
 </section>
 

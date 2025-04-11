@@ -47,10 +47,17 @@ export const traduccionesES = {
     'restaurante':'Restaurantes y gastronomía',
     'agencias':'Agencias y Operadores Turísticos',
     'cultura':'Turismo cultural y patrimonial',
+    'title-mision':'Misión',
+    'title-vision':'Visión',
+    'mision':'Facilitar la planeación turística en la región 5 de Colombia mediante una plataforma digital bilingüe, centralizada y accesible, que conecte a turistas con proveedores locales, promueva el ecoturismo y potencie la visibilidad de pequeños negocios en el entorno digital.',
+    'vision':'Ser la plataforma digital líder en turismo sostenible y cultural en Colombia, reconocida por su innovación, impacto social y compromiso con el desarrollo económico local, ofreciendo experiencias únicas a turistas nacionales e internacionales.',
+    'ms-posts':'Aún no hay publicaciones disponibles.',
+    'about':'SOBRE NOSOTROS',
+    'about-info':'Somos Caribe Dreams, una iniciativa digital creada por jóvenes apasionados por el turismo, la tecnología y el desarrollo sostenible. Creemos que viajar debería ser una experiencia sencilla, segura y enriquecedora. Por eso, desarrollamos una plataforma que conecta a turistas con lo mejor de la región 5: su gente, sus paisajes, su cultura y sus servicios. Queremos que descubras Colombia como nunca antes… con todo lo que sueñas, al alcance de un clic.',
     '':'',
     '':'',
     '':'',
-    '':'',
+
 
 
 }

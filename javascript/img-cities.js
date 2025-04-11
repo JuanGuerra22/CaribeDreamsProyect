@@ -66,7 +66,7 @@ function mostrarContenido(){
      if(contMostrar){
         contMostrar.classList.add('visible');
         contMostrar.scrollIntoView({ behavior: 'smooth' });
-    } else if(departamentos || servicios){
+    } else if(departamentos && servicios){
         const divContenido = document.createElement('div');
         divContenido.classList.add('div-contenido');
         divContenido.innerHTML = `
@@ -80,3 +80,49 @@ function mostrarContenido(){
 btnSearch.addEventListener('click', mostrarContenido)
 
 
+
+
+
+
+// mostrar y ocultar los servicios y eventos en el search bar
+
+const searchServices  = document.getElementById('search-bar-services');
+const searchEvents  = document.getElementById('search-bar-events');
+const searchPosts = document.getElementById('search-bar-posts')
+
+const servicesBtn = document.getElementById('services-btn');
+const eventsBtn = document.getElementById('events-btn');
+const postsBtn = document.getElementById('posts-btn')
+
+eventsBtn.addEventListener('click', ()=>{
+    if(searchEvents){
+        searchServices.classList.remove('visible');
+        searchPosts.classList.remove('visible');
+        searchEvents.classList.add('visible')
+        eventsBtn.style.backgroundColor = '#000000ce'
+        servicesBtn.style.backgroundColor = '#00000093'
+        postsBtn.style.backgroundColor = '#00000093'
+    }
+});
+
+servicesBtn.addEventListener('click', ()=>{
+    if(searchServices){
+        searchEvents.classList.remove('visible');
+        searchPosts.classList.remove('visible');
+        searchServices.classList.add('visible')
+        servicesBtn.style.backgroundColor = '#000000ce'
+        eventsBtn.style.backgroundColor = '#00000093'
+        postsBtn.style.backgroundColor = '#00000093'
+    }
+});
+
+postsBtn.addEventListener('click', ()=>{
+    if(searchPosts){
+        searchPosts.classList.add('visible');
+        searchServices.classList.remove('visible');
+        searchEvents.classList.remove('visible')
+        postsBtn.style.backgroundColor = '#000000ce'
+        eventsBtn.style.backgroundColor = '#00000093'
+        servicesBtn.style.backgroundColor = '#00000093'
+    }
+});

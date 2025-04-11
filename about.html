@@ -1,13 +1,14 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <title>Abut us - Caribe Dreams</title>    
     <script src="./javascript/javascript.js" defer></script>
 </head>
 <body>
@@ -35,7 +36,7 @@ x<!DOCTYPE html>
                         <a href="#" data-i18n="menu-creadores" class="redirectToCreators">Creators</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-i18n="menu-acerca-de"  class="dropdown-toggle">About</a>                    
+                        <a href="about.html" data-i18n="menu-acerca-de"  class="redirectToAbout">About</a>                    
                     </li>
                     <li class="dropdown">
                         <a href="#" data-i18n="menu-destinos" class="dropdown-toggle">Destinations</a>
@@ -52,55 +53,46 @@ x<!DOCTYPE html>
                         </a>
                     </li>
                     <li>
-                        <a href="select-register.html" data-i18n="resgistro" class="edirrectToLogOut hidden"  >
+                        <a href="select-register.html" data-i18n="registro" class="edirrectToLogOut hidden"  >
                            Register
                         </a>
                     </li>
                     <li>
-                        <button onclick="cambiarIdioma('en')">English</button>
-                         <button onclick="cambiarIdioma('es')">Español</button>
+                        <button class="btn-idiomas" id="btn-english">English</button>
+                        <button class="btn-idiomas" id="btn-spanish">Español</button>
                     </li>
                 </ul>
             </nav>
         </header>
     </div>
-    <section class="welcome-section">
-        <div class="card-creator">
-            <div class="welcome-container">
-                <h1>Creators</h1>
-                <div class="cont-creators">
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Andree Felipe Zarate Camacho</h3>
-                        <p>Programming Student 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Joaquín Antonio Muñoz Moncayo</h3>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Carlos Daniel Ortiz Gonzalez</h3>
-                        <p>Lic. Informatica 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Juan Luis Guerra Rodríguez</h3>
-                        <p>Lic. Informatica y medios Audiovisuales 💻</p>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Diego Fernando Angulo Bernal</h3>
-                    </div>
-                    <div class="creators">
-                        <img src="assets/images/user.png" alt="">
-                        <h3>Brayan de Jesus Fernandez Garces</h3>
-                        <p>FullStack Developer & Systems engineer 💻</p>
-                    </div>  
-                </div>         
+
+<section class="cont-about">
+
+    <div class="about-info">
+        <h1 data-i18n="about">ABOUT US</h1>
+        <img src="assets/images/logo.png" alt="">
+        <p data-i18n="about-info">We are Caribe Dreams a digital initiative born from young minds passionate about tourism, technology, and sustainable development. We believe that traveling should be simple, safe, and enriching. That’s why we created a platform that connects travelers with the best of Region 5: its people, its landscapes, its culture, and its services. We want you to experience Colombia like never before… with everything you dream of, just one click away.</p>
+    </div>
+
+    <div class="cont-mision-vision">
+        <div class="mision">
+            <img src="assets/images/img-mision.svg" alt="">
+            <div class="mv-info">
+                <h3 data-i18n="title-mision">Misión</h3>
+                <p data-i18n="mision">To facilitate travel planning in Region 5 of Colombia through a bilingual, centralized, and accessible digital platform that connects tourists with local service providers, promotes ecotourism, and boosts the visibility of small businesses in the digital space.</p>
             </div>
         </div>
-    </section>
+
+        <div class="vision">
+            <img src="assets/images/img-vision.svg" alt="">
+            <div class="mv-info">
+                <h3 data-i18n="title-vision" >Visión</h3>
+                <p data-i18n="vision">To become the leading digital platform for sustainable and cultural tourism in Colombia, recognized for its innovation, social impact, and commitment to local economic development, offering unique experiences to both national and international tourists.</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+    <script src="javascript/traducciones.js" type="module"></script>
 </body>
-<script src="javascript/traducciones.js" type="module"></script>
 </html>

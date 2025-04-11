@@ -25,14 +25,14 @@ nav ul, div header {
 
 }
 body {
-    background-image: url(../assets/images/playa2.png);
+    background-image: url(../assets/images/fondo.svg);
     /* background: linear-gradient(180deg, rgba(58,151,180,1) 0%, rgba(195,186,186,1) 47%, rgba(10,10,10,0.6739028375021884) 100%); */
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
     font-family: 'Dosis', 'sans-serif', 'Sansita Swashed', cursive;
+
 }
 
 label{
@@ -612,8 +612,8 @@ form p{
     cursor: pointer;
 }
 
-.tab-select{
-    display: flex;
+.section-services{
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -664,30 +664,18 @@ form p{
     gap: 5px;
 }
 
-.cont-btn-services{
+.btn-search-bar{
     width: 100px;
     height: 25px;
-    background-color: #000000ce;
+    background-color: #00000093;
     border-radius: 5px 5px 0 0 ;
     text-align: center;
     cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+    outline: none;
 }   
-.cont-btn-latest{
-    width: 100px;
-    height: 25px;
-    background-color: #00000093;
-    border-radius: 5px 5px 0 0 ;
-    text-align: center;
-    cursor: pointer;
-}
-.cont-btn-event{
-    width: 100px;
-    height: 25px;
-    background-color: #00000093;
-    border-radius: 5px 5px 0 0 ;
-    text-align: center;
-    cursor: pointer;
-}
+
 .botones-principal a{
     text-decoration: none;
     color: #ffffff;
@@ -872,38 +860,6 @@ html, body {
 
 /* ------------------------------------------ */
 
-/* Contenedor de imagenes por Departamento */
-.cont-img-city{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-.cont-img-city h2{
-    color: #fff;
-    font-size: 2.2rem;
-    background-color: var(--color-card-opa);
-    border-radius: 5px 5px 0 0;
-    padding: 7px;
-    margin-top: 10px;
-}
-.cont-ciudades{
-    display: none;
-    justify-content: center;
-    gap: 25px;
-}   
-.img-monteria{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.img-monteria h3{
-    font-size: 1.1rem;
-}
-
 .visible{
     display: flex;
 }
@@ -915,6 +871,7 @@ html, body {
     justify-content: center;
     align-items: center;  
     width: 100%;  
+    margin-top: 20px;
 }
 .cont-services h2{
     display: flex;
@@ -957,6 +914,7 @@ html, body {
 }
 .cont-services-info h3{
     font-size: 1.5rem;
+    text-align: center;
 }
 .cont-services-info ul li{
     color: #ffffff;
@@ -997,4 +955,66 @@ html, body {
     text-align: center;
     width: 400px;
     height: 220px;
+}
+
+/* seccion de eventos index  */
+
+.section-eventos{
+    display: none;
+}
+.section-eventos.visible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.botones-eventos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+.btn-event{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Dosis';
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--medium-blue);
+    cursor: pointer;
+}
+.btn-event:hover{
+    background-color: var(--golden-yellow);
+}
+.btn-event:focus{
+    background-color: var(--golden-yellow);
+}
+
+.section-posts{
+    display: none;
+}
+.section-posts.visible{
+    display: flex;
+    color: #fff;
+}
+#services-btn{
+    background-color: #000000ce;
+}
+/* ------------------------- */
+.btn-idiomas{
+    width: 60px;
+    height: 20px;
+    font-family: 'Dosis';
+    font-weight: 500;
+    outline: none;
+    border-radius: 30px;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btn-idiomas:focus{
+    background-color: var(--golden-yellow);
 }
