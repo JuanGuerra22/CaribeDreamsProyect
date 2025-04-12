@@ -964,10 +964,18 @@ html, body {
 }
 .section-eventos.visible{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
+.section-eventos p{
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 .botones-eventos{
     display: flex;
     justify-content: center;

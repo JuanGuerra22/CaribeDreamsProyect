@@ -1,0 +1,61 @@
+.section-carousel.visible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff63;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.section-carousel{
+    display: none;
+}
+  .carousel-container {
+    position: relative; 
+    width: 500px; 
+    height: 300px; 
+    overflow: hidden; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .carousel-slide {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor manteniendo la proporción */
+  }
+  
+  .carousel-slide.active {
+    opacity: 1; 
+  }
+  
+  .prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Asegura que los botones estén encima de las imágenes */
+  }
+  
+  .prev-button {
+    left: 10px;
+  }
+  
+  .next-button {
+    right: 10px;
+  }
